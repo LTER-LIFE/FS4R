@@ -11,6 +11,7 @@ level.
 #| fig-cap: "Temperature and ozone level."
 #| warning: false
 
+install.packages("ggplot2")
 library(ggplot2)
 
 ggplot(airquality, aes(Temp, Ozone)) + 
