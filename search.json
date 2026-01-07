@@ -34,7 +34,7 @@
     "href": "00-chapter.html",
     "title": "3  Air Quality",
     "section": "",
-    "text": "Test chapter.\nFigure 3.1 further explores the impact of temperature on ozone level.\n\nlibrary(ggplot2)\n\nggplot(airquality, aes(Temp, Ozone)) + \n      geom_point() + \n        geom_smooth(method = \"loess\")\n\n\n\n\n\n\n\nFigure 3.1: Temperature and ozone level.",
+    "text": "Test chapter.\nFigure 3.1 further explores the impact of temperature on ozone level.\n\ninstall.packages(\"ggplot2\")\nlibrary(ggplot2)\n\nggplot(airquality, aes(Temp, Ozone)) + \n      geom_point() + \n        geom_smooth(method = \"loess\")\n\n\n\n\n\n\n\nFigure 3.1: Temperature and ozone level.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Air Quality</span>"
     ]
