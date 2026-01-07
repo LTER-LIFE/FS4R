@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – FS4R</title>
+<title>4&nbsp; Reproducible Research – FS4R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -49,7 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./testing.html" rel="prev">
+<link href="./documentation.html" rel="next">
+<link href="./yourenotalone.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -101,7 +103,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reproducible.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducible Research</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -152,7 +154,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reproducible.html" class="sidebar-item-text sidebar-link">
+  <a href="./reproducible.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducible Research</span></span></a>
   </div>
 </li>
@@ -182,7 +184,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -199,7 +201,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducible Research</span></h1>
 </div>
 
 
@@ -216,21 +218,22 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<p>Reproducible research is the practice of organizing and documenting data, code, and methods so that others can independently recreate the same results from the same materials.</p>
+<p>In recent years, the integrity and reliability of scientific research have faced growing scrutiny across disciplines. Increasingly, the scientific community recognizes that progress hinges not only on the novelty of results, but also on the transparency and reproducibility of the research underlying those results. Reproducibility—the capability for others to independently confirm results using the same data, code, and methods—is no longer optional. It is the minimum standard for reliable scientific work (<span class="citation" data-cites="peng_reproducible_2011">Peng (<a href="references.html#ref-peng_reproducible_2011" role="doc-biblioref">2011</a>)</span>).</p>
+<p>Too often, scientific findings cannot be replicated because the underlying data or computational steps are inaccessible or poorly documented. This erodes trust and stalls the advancement of knowledge. The <span class="citation" data-cites="turing_2019">The Turing Way Community et al. (<a href="references.html#ref-turing_2019" role="doc-biblioref">2019</a>)</span> offers a practical manifesto for change, outlining steps researchers can take to embed reproducibility into their everyday practice. These principles, while simple in concept, are transformative in their effect.</p>
+<p>A cornerstone of reproducible research is automation: using scripts and workflow management tools to carry out analyses reduces manual errors and makes the research process transparent. As described in <a href="goodcoding.html" class="quarto-xref">Chapter&nbsp;<span>7</span></a> and <a href="testing.html" class="quarto-xref">Chapter&nbsp;<span>8</span></a>, automating analysis not only streamlines work, but also enables reliable testing and validation of results.</p>
+<p>Equally vital is thorough documentation. Documenting your choices—how data were obtained and cleaned, which methods and tools were used—ensures transparency and supports both your future self and your colleagues. This principle connects directly to <a href="documentation.html" class="quarto-xref">Chapter&nbsp;<span>5</span></a>, where practical guidance is offered for keeping project and code documentation up-to-date.</p>
+<p>Finally, robust version control (see <a href="versioncontrol.html" class="quarto-xref">Chapter&nbsp;<span>6</span></a>) should become a staple in every researcher’s toolkit. By tracking changes to code and documentation, version control systems like Git support collaborative work and make it easier to identify and correct errors introduced during development. This practice also complements team workflows described in Deployment, Maintenance &amp; Collaboration.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-peng_reproducible_2011" class="csl-entry" role="listitem">
-Peng, Roger D. 2011. <span>“Reproducible Research in Computational
-Science.”</span> <em>Science</em> 334 (6060): 1226–27. <a href="https://doi.org/10.1126/science.1213847">https://doi.org/10.1126/science.1213847</a>.
+Peng, Roger D. 2011. <span>“Reproducible Research in Computational Science.”</span> <em>Science</em> 334 (6060): 1226–27. <a href="https://doi.org/10.1126/science.1213847">https://doi.org/10.1126/science.1213847</a>.
 </div>
 <div id="ref-turing_2019" class="csl-entry" role="listitem">
-The Turing Way Community, The Turing Way, Becky Arnold, Louise Bowler,
-Sarah Gibson, Patricia Herterich, Rosie Higman, Anna Krystalli,
-Alexander Morley, Martin O’Reilly, and Kirstie Whitaker. 2019.
-<span>“The Turing Way: A Handbook for Reproducible Data Science.”</span>
-Zenodo. <a href="https://doi.org/10.5281/ZENODO.3233986">https://doi.org/10.5281/ZENODO.3233986</a>.
+The Turing Way Community, The Turing Way, Becky Arnold, Louise Bowler, Sarah Gibson, Patricia Herterich, Rosie Higman, Anna Krystalli, Alexander Morley, Martin O’Reilly, and Kirstie Whitaker. 2019. <span>“The Turing Way: A Handbook for Reproducible Data Science.”</span> Zenodo. <a href="https://doi.org/10.5281/ZENODO.3233986">https://doi.org/10.5281/ZENODO.3233986</a>.
 </div>
 </div>
-
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -635,11 +638,14 @@ Zenodo. <a href="https://doi.org/10.5281/ZENODO.3233986">https://doi.org/10.5281
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./testing.html" class="pagination-link" aria-label="Testing and Validation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Testing and Validation</span></span>
+      <a href="./yourenotalone.html" class="pagination-link" aria-label="You are not alone">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">You are not alone</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./documentation.html" class="pagination-link" aria-label="Documentation">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Documentation</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

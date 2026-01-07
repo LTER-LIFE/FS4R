@@ -129,8 +129,38 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00-chapter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Air Quality</span></span></a>
+  <a href="./yourenotalone.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">You are not alone</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reproducible.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducible Research</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./documentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Documentation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./versioncontrol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Version Control</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./goodcoding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Good Coding Practices</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Testing and Validation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -149,7 +179,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <ul class="collapse">
+  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status">Status</a></li>
+  <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do">To Do</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -189,9 +223,83 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="preface" class="level1 unnumbered">
 <h1 class="unnumbered">Preface</h1>
-<p>This is the preface</p>
+<p>This guide provides practical recommendations and best practices to help you write good research software, make it Findable, Accessible, Interoperable, and Reusable (FAIR). Following FAIR principles increases the visibility, reusability, and reproducibility of your software. Using these guidance you are also supporting reproducible science and collaboration within your research community.</p>
+<section id="status" class="level2">
+<h2 class="anchored" data-anchor-id="status">Status</h2>
+<p>This guide is currently under development. The content is a work in progress and will be continuously improved. If you have any suggestions or comments, please open an issue on <a href="https://github.com/LTER-LIFE/FS4R/">GitHub</a> or contact the authors.</p>
+</section>
+<section id="to-do" class="level2">
+<h2 class="anchored" data-anchor-id="to-do">To Do</h2>
+<p>Since this is the preface and the first part of the book, it is logical place to put an annotated outline of the rest of the book. This will help to structure the book and to see what is missing.</p>
+<p>Please note, this is an extensive list and maybe somewhat ambitious. During the development of this book we might drop a few subjects (or squeze them in other chapters) to keep the book manageable.</p>
+<ol type="1">
+<li><p>Introduction (this chapter)</p>
+<ul>
+<li>Purpose and scope</li>
+<li>Who is this book for?</li>
+</ul></li>
+<li><p>Project Planning</p>
+<ul>
+<li>Overview of the software/project life cycle</li>
+<li>Defining objectives and requirements</li>
+<li>Data Management Plan (DMP)</li>
+<li>Stakeholder identification</li>
+</ul></li>
+<li><p>Version Control &amp; Initial Setup (versioncontrol.qmd)</p>
+<ul>
+<li>Creating a Git repository</li>
+<li>Essential files: README, LICENSE, .gitignore, etc.</li>
+<li>Collaboration and branching strategies</li>
+</ul></li>
+<li><p>Conceptual Design</p>
+<ul>
+<li>Developing the conceptual/data model</li>
+<li>Mapping workflow steps (import, clean, transform, model, visualize, report)</li>
+<li>Flow diagrams (e.g., Mermaid)</li>
+</ul></li>
+<li><p>Data Management</p>
+<ul>
+<li>Organizing and storing data</li>
+<li>Data formats and naming conventions</li>
+<li>Data sharing and archiving policies</li>
+</ul></li>
+<li><p>Implementation &amp; Coding Standards (goodcoding.qmd)</p>
+<ul>
+<li>Writing clean, efficient, maintainable code</li>
+<li>Applying style guides and conventions</li>
+<li>Structuring codebase (modules, scripts, notebooks)</li>
+</ul></li>
+<li><p>Documentation (documentation.qmd)</p>
+<ul>
+<li>Project documentation (README, CHANGELOG, CONTRIBUTING)</li>
+<li>Code documentation (comments, docstrings, notebooks)</li>
+<li>Keeping documentation up-to-date</li>
+</ul></li>
+<li><p>Reproducibility &amp; Environment Management (reproducibility.qmd)</p>
+<ul>
+<li>Definitions: reproducibility, replicability, reuse</li>
+<li>Managing environments (Conda, Docker, renv)</li>
+<li>Ensuring analyses can be reliably repeated (notebooks, scripts, dependencies)</li>
+</ul></li>
+<li><p>Testing &amp; Validation (testing.qmd)</p>
+<ul>
+<li>Unit, regression, and integration tests</li>
+<li>Validation and verification of results</li>
+<li>Automated testing tools and workflows</li>
+</ul></li>
+<li><p>Deployment, Maintenance &amp; Collaboration</p>
+<ul>
+<li>Sharing code and results (repositories, archives)</li>
+<li>Licensing and citation</li>
+<li>Persistent identifiers (DOIs)<br>
+</li>
+<li>Updating, maintaining, and extending the project</li>
+<li>Team communication and best practices</li>
+</ul></li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

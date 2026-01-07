@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Air Quality – FS4R</title>
+<title>7&nbsp; Good Coding Practices – FS4R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./summary.html" rel="prev">
+<link href="./testing.html" rel="next">
+<link href="./versioncontrol.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -118,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-chapter.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Air Quality</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./goodcoding.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Good Coding Practices</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -163,8 +128,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00-chapter.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Air Quality</span></span></a>
+  <a href="./yourenotalone.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">You are not alone</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reproducible.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducible Research</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./documentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Documentation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./versioncontrol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Version Control</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./goodcoding.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Good Coding Practices</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Testing and Validation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -178,15 +173,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-defintion-of-good-code" id="toc-the-defintion-of-good-code" class="nav-link active" data-scroll-target="#the-defintion-of-good-code"><span class="header-section-number">7.1</span> The defintion of good code</a></li>
+  <li><a href="#good-coding-practices" id="toc-good-coding-practices" class="nav-link" data-scroll-target="#good-coding-practices"><span class="header-section-number">7.2</span> Good coding practices</a>
+  <ul class="collapse">
+  <li><a href="#keep-it-small" id="toc-keep-it-small" class="nav-link" data-scroll-target="#keep-it-small"><span class="header-section-number">7.2.1</span> Keep it small</a></li>
+  <li><a href="#formating-and-style-guidens" id="toc-formating-and-style-guidens" class="nav-link" data-scroll-target="#formating-and-style-guidens"><span class="header-section-number">7.2.2</span> formating and style guidens</a></li>
+  <li><a href="#naming-functions-and-variables" id="toc-naming-functions-and-variables" class="nav-link" data-scroll-target="#naming-functions-and-variables"><span class="header-section-number">7.2.3</span> Naming functions and variables</a></li>
+  <li><a href="#keep-it-simple" id="toc-keep-it-simple" class="nav-link" data-scroll-target="#keep-it-simple"><span class="header-section-number">7.2.4</span> Keep it simple</a></li>
+  <li><a href="#dont-repeat-yourself-dry" id="toc-dont-repeat-yourself-dry" class="nav-link" data-scroll-target="#dont-repeat-yourself-dry"><span class="header-section-number">7.2.5</span> Don’t repeat yourself (DRY)</a></li>
+  <li><a href="#single-responsibility" id="toc-single-responsibility" class="nav-link" data-scroll-target="#single-responsibility"><span class="header-section-number">7.2.6</span> Single responsibility</a></li>
+  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments"><span class="header-section-number">7.2.7</span> Comments</a></li>
+  <li><a href="#error-handling" id="toc-error-handling" class="nav-link" data-scroll-target="#error-handling"><span class="header-section-number">7.2.8</span> Error handling</a></li>
+  <li><a href="#refactoring" id="toc-refactoring" class="nav-link" data-scroll-target="#refactoring"><span class="header-section-number">7.2.9</span> refactoring</a></li>
+  <li><a href="#reviewing" id="toc-reviewing" class="nav-link" data-scroll-target="#reviewing"><span class="header-section-number">7.2.10</span> Reviewing</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Air Quality</span></h1>
+<h1 class="title"><span id="sec-goodcodingpractices" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Good Coding Practices</span></span></h1>
 </div>
 
 
@@ -203,30 +217,86 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Test chapter.</p>
-<p><a href="#fig-airquality" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> further explores the impact of temperature on ozone level.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div id="fig-airquality" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-airquality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="00-chapter_files/figure-html/fig-airquality-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-airquality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.1: Temperature and ozone level.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<p>Good code is important, it is like good writing. If you are reading a story wich is written incoherently, it takes you much longer to read and to understand, if you can understand it anyway. The problem with bad code is that it can actually works and produce the right result. And if the result counts, you might get lured into the swamp of bad code. If you, your collegue, or your future self has to make changes to the code, that swamp can turn out to be a nightmare. The code is hard to understand, hard to maintain, and hard to extent or reuse. This leads to frustration, errors, and wasted time.</p>
+<p>It takes time to learn how to write a good, concise, and easy to understand story. If you really master it it can even become an art. The same holds for coding. So it also takes time and effort to learn how to write good code. And the best way to learn is by doing it, learn from others, and get regular feedback on your code.</p>
+<p>This chapter is not a simple ‘x steps to success’ guide. It is a collection of good practices and guidelines which you can implement in your own work. Do not try to implement all at once, but pick one or two practices at a time and try how they work for you. Then, over time, your coding skills will improve. But before we start, we need to know what we aim for: what is good code?</p>
+<section id="the-defintion-of-good-code" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="the-defintion-of-good-code"><span class="header-section-number">7.1</span> The defintion of good code</h2>
+<p>What is good code? That is code which is easy to read and understand. A good metric to evaluate the code is the ‘time till understanding’: How long does it take for your collegue to read through your code and uderstand what is does <span class="citation" data-cites="boswell_Foucher">(<a href="references.html#ref-boswell_Foucher" role="doc-biblioref"><strong>boswell_Foucher?</strong></a>)</span>. And to understand code it means:</p>
+<ul>
+<li>that you can make changes</li>
+<li>that you can spot errors or inconsistencies<br>
+</li>
+<li>that you can extend the code, or reuse the code, to new use cases,</li>
+<li>and that you understand how this code interacts with other code</li>
+</ul>
+<p>Writing better code means that you are minimizing the metric ‘time till understanding’. When it is good enough is a matter of definition. In theory this means that the metric is equal to time needed for a single, top to bottom, read through of the code. In practice this is not always possible, because some code is inherently complex. Actually measuring the time till understanding is also not recommended, because it will very a lot between different people with differen expertise levels. It is, however, a good goal to keep in mind. Both when writing code but also when reviewing code.</p>
+</section>
+<section id="good-coding-practices" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="good-coding-practices"><span class="header-section-number">7.2</span> Good coding practices</h2>
+<section id="keep-it-small" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="keep-it-small"><span class="header-section-number">7.2.1</span> Keep it small</h3>
+<p>A book is not written as a single huge chapter, but is broken down in smaller chapters and sections. The same holds for code. If you break down your code in smaller chunks, scripts of files, it becomes much easier to read and understand. Especially if these chunks of code can allso be related to the conceptual model of your workflow (see chapter about conceptual models). If the reader known the context of the chunk of code it is much easier to understand what it does.</p>
+<p>The same goes for sentences in writing. Long sentences are hard to understand. Short sentences are easier to read. So do’t try to be superefficient and put as much operations in one single line but try to split it up</p>
+<p>EXAMPLE code</p>
+<p>EXAMPLE R code, pipe operators</p>
+</section>
+<section id="formating-and-style-guidens" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="formating-and-style-guidens"><span class="header-section-number">7.2.2</span> formating and style guidens</h3>
+<p>The easiest part in writing good code is apllying a style guide to your code. A style guide is a set of rules how to format your code. It includes things like indentation, spacing, line breaks, naming conventions, and other aspects that contribute to the overall readability of the code.</p>
+<p>Examples of generic style guides are ‘tidystyle’ [ref] for R and ‘PEP 8’ [ref] for Python. These guides are often extended with local style guides wich contains conventions like file naming, folder structures, and other intitute spefific rules.</p>
+<p>For most generic style guides, linters are avialable. These are tools which can be integrated in your code editor of EDI and check automagically your code against the style guide. It is like an autmoated spelling check in a text editor. Most linters can also autoformat your code, so you do not have to worry about the details of the style guide yourself.</p>
+<p>TODO: give examples/refs Example of linters:</p>
+<ul>
+<li>R: lintr, styler</li>
+<li>Python: pylint, black, flake8</li>
+</ul>
+<p>Exampe of editor settings:</p>
+<ul>
+<li>R: Rstudio settings for lintr and styler</li>
+<li>Python: VSCode settings for pylint and black</li>
+</ul>
+<p>Example, formatted / unformatted code</p>
+<p>Working with a style guide and a linter can be hard in the beginning. Especially if you are allready programming for some time using your own code style. You have to ‘unlearn’ your old habbits and get used to the new style. While this can be frustrating in the beginning, it will pay off later because you will be producing more consistent code. If you and your colleagues use the same style, it also means that it is easier to read eachother code. Reducing the ‘time till understanding’</p>
+</section>
+<section id="naming-functions-and-variables" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="naming-functions-and-variables"><span class="header-section-number">7.2.3</span> Naming functions and variables</h3>
+<p>It is important to use meaningful names for variables and functions because it makes your code easier to read and understand, both for yourself and for others who may work with your code in the future. Clear names describe what a variable represents or what a function does, which helps prevent confusion and reduces the chances of making mistakes. Good naming also makes it easier to maintain and update your code over time.</p>
+<p>TODO: Something about scope (see quote)</p>
+<p>TODO: See ‘art of readable code, chap 2’</p>
+</section>
+<section id="keep-it-simple" class="level3" data-number="7.2.4">
+<h3 data-number="7.2.4" class="anchored" data-anchor-id="keep-it-simple"><span class="header-section-number">7.2.4</span> Keep it simple</h3>
+<p>Simple and straightforwarder code</p>
+<p>DOnt; make the reader think too musch</p>
+</section>
+<section id="dont-repeat-yourself-dry" class="level3" data-number="7.2.5">
+<h3 data-number="7.2.5" class="anchored" data-anchor-id="dont-repeat-yourself-dry"><span class="header-section-number">7.2.5</span> Don’t repeat yourself (DRY)</h3>
+<p>write functions document function (use genAI)</p>
+</section>
+<section id="single-responsibility" class="level3" data-number="7.2.6">
+<h3 data-number="7.2.6" class="anchored" data-anchor-id="single-responsibility"><span class="header-section-number">7.2.6</span> Single responsibility</h3>
+<p>Each function should do one thing and do it well</p>
+</section>
+<section id="comments" class="level3" data-number="7.2.7">
+<h3 data-number="7.2.7" class="anchored" data-anchor-id="comments"><span class="header-section-number">7.2.7</span> Comments</h3>
+<p>See chapter about documentation</p>
+</section>
+<section id="error-handling" class="level3" data-number="7.2.8">
+<h3 data-number="7.2.8" class="anchored" data-anchor-id="error-handling"><span class="header-section-number">7.2.8</span> Error handling</h3>
+<p>Check inputs and throw error when needed catch errors, not unexpected results</p>
+</section>
+<section id="refactoring" class="level3" data-number="7.2.9">
+<h3 data-number="7.2.9" class="anchored" data-anchor-id="refactoring"><span class="header-section-number">7.2.9</span> refactoring</h3>
+<p>not without a test</p>
+</section>
+<section id="reviewing" class="level3" data-number="7.2.10">
+<h3 data-number="7.2.10" class="anchored" data-anchor-id="reviewing"><span class="header-section-number">7.2.10</span> Reviewing</h3>
+<p>how to review (should this be a separate chapter?)</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -631,13 +701,13 @@ Figure&nbsp;3.1: Temperature and ozone level.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span>
+      <a href="./versioncontrol.html" class="pagination-link" aria-label="Version Control">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Version Control</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./testing.html" class="pagination-link" aria-label="Testing and Validation">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Testing and Validation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
