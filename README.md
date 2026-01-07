@@ -14,7 +14,7 @@ Yes, that's it. This is just to get started.
 Don’t expect too much just yet. The writing of these guidances is just
 started.
 
-## Reading the RS4F guidance
+## Reading the FS4R guidance
 
 You can read this guidance [online](https://lter-life.github.io/FS4R/)
 of you can download is as a [PDF document](https://lter-life.github.io/FS4R/FS4R.pdf)
