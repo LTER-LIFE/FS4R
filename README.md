@@ -14,3 +14,24 @@ Yes, that's it. This is just to get started.
 Don’t expect too much just yet. The writing of these guidances is just
 started.
 
+## Reading the RS4F guidance
+
+You can read this guidance [online](https://lter-life.github.io/FS4R/)
+of you can download is as a [PDF document](https://lter-life.github.io/FS4R/FS4R.pdf)
+
+## Licence
+
+TBD
+
+## How to contribute
+
+Yes, contributions are very welcome! Either contact us or create a
+fork and send us a pull request.
+
+In this repository you find two branches (among others). The 'main'
+branch is the branch which is published. The 'draft' branch is the
+version we are working on. Other branches relate to issues.
+
+# Authors
+
+TBD
