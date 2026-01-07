@@ -1,0 +1,21 @@
+{
+  "hash": "7e7be2c3695ff5a7ce736c95f52ee23b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n## Air Quality\n\nTest chapter.\n\n@fig-airquality further explores the impact of temperature on ozone\nlevel.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\n\nggplot(airquality, aes(Temp, Ozone)) + \n      geom_point() + \n        geom_smooth(method = \"loess\")\n```\n\n::: {.cell-output-display}\n![Temperature and ozone level.](00-chapter_files/figure-pdf/fig-airquality-1.pdf){#fig-airquality fig-pos='H'}\n:::\n:::\n\n\n",
+    "supporting": [
+      "00-chapter_files/figure-pdf"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

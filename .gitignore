@@ -3,3 +3,5 @@
 /book/
 *.Rproj
 *.tex
+*.swp
+_book/
