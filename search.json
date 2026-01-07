@@ -1,0 +1,42 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "FS4R",
+    "section": "",
+    "text": "Preface\nThis is the preface",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is the introduction section of the document.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "00-chapter.html",
+    "href": "00-chapter.html",
+    "title": "3  Air Quality",
+    "section": "",
+    "text": "Test chapter.\nFigure 3.1 further explores the impact of temperature on ozone level.\n\nlibrary(ggplot2)\n\nggplot(airquality, aes(Temp, Ozone)) + \n      geom_point() + \n        geom_smooth(method = \"loess\")\n\n\n\n\n\n\n\nFigure 3.1: Temperature and ozone level.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Air Quality</span>"
+    ]
+  }
+]
