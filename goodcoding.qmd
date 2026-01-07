@@ -1,0 +1,159 @@
+
+# Good Coding Practices {#sec-goodcodingpractices}
+
+Good code is important, it is like good writing. If you are reading a
+story wich is written incoherently, it takes you much longer to read
+and to understand, if you can understand it anyway. The problem with
+bad code is that it can actually works and produce the right result.
+And if the result counts, you might get lured into the swamp of bad
+code. If you, your collegue, or your future self has to make changes
+to the code, that swamp can turn out to be a nightmare. The code is
+hard to understand, hard to maintain, and hard to extent or reuse.
+This leads to frustration, errors, and wasted time. 
+
+It takes time to learn how to write a good, concise, and easy to
+understand story. If you really master it it can even become an art.
+The same holds for coding. So it also takes time and effort to learn how to
+write good code. And the best way to learn is by doing it, learn from
+others, and get regular feedback on your code.
+
+This chapter is not a simple 'x steps to success' guide. It is a
+collection of good practices and guidelines which you can implement in
+your own work. Do not try to implement all at once, but pick one or
+two practices at a time and try how they work for you. Then, over time,
+your coding skills will improve. But before we start, we need to know
+what we aim for: what is good code?
+
+## The defintion of good code
+
+What is good code? That is code which is easy to read and understand.
+A good metric to evaluate the code is the 'time till understanding':
+How long does it take for your collegue to read through your code and
+uderstand what is does @boswell_Foucher. And to understand
+code it means:
+
+ * that you can make changes
+ * that you can spot errors or inconsistencies  
+ * that you can extend the code, or reuse the code, to new use cases,
+ * and that you understand how this code interacts with other code  
+
+Writing better code means that you are minimizing the metric 'time till
+understanding'.  When it is good enough is a matter of definition. In
+theory this means that the metric is equal to time needed for a single,
+top to bottom, read through of the code. In practice this is not always
+possible, because some code is inherently complex. Actually measuring
+the time till understanding is also not recommended, because it will
+very a lot between different people with differen expertise levels. It
+is, however, a good goal to keep in mind. Both when writing code but
+also when reviewing code. 
+
+## Good coding practices
+
+
+### Keep it small
+
+A book is not written as a single huge chapter, but is broken down in
+smaller chapters and sections. The same holds for code. If you break
+down your code in smaller chunks, scripts of files, it becomes much
+easier to read and understand. Especially if these chunks of code can
+allso be related to the conceptual model of your workflow (see chapter
+about conceptual models). If the reader known the context of the chunk
+of code it is much easier to understand what it does.
+
+The same goes for sentences in writing. Long sentences are hard to
+understand. Short sentences are easier to read. So do't try to be
+superefficient and put as much operations in one single line but try
+to split it up
+
+EXAMPLE code
+
+EXAMPLE R code, pipe operators
+
+
+### formating and style guidens
+
+The easiest part in writing good code is apllying a style guide to
+your code. A style guide is a set of rules how to format your
+code. It includes things like indentation, spacing, line breaks,
+naming conventions, and other aspects that contribute to the overall
+readability of the code.
+
+Examples of generic style guides are 'tidystyle' [ref] for R and 'PEP 8' [ref]
+for Python. These guides are often extended with local style guides
+wich contains conventions like file naming, folder structures, and
+other intitute spefific rules.
+
+For most generic style guides, linters are avialable. These are tools
+which can be integrated in your code editor of EDI and check
+automagically your code against the style guide. It is like an
+autmoated spelling check in a text editor. Most linters can also
+autoformat your code, so you do not have to worry about the details
+of the style guide yourself. 
+
+TODO: give examples/refs
+Example of linters:
+
+ - R: lintr, styler
+ - Python: pylint, black, flake8
+
+Exampe of editor settings:
+
+ - R: Rstudio settings for lintr and styler
+ - Python: VSCode settings for pylint and black   
+
+Example, formatted / unformatted code
+
+Working with a style guide and a linter can be hard in the beginning.
+Especially if you are allready programming for some time using your
+own code style. You have to 'unlearn' your old habbits and get used to
+the new style. While this can be frustrating in the beginning, it will
+pay off later because you will be producing more consistent code. If
+you and your colleagues use the same style, it also means that it is
+easier to read eachother code. Reducing the 'time till understanding'
+
+### Naming functions and variables
+
+It is important to use meaningful names for variables and functions
+because it makes your code easier to read and understand, both for
+yourself and for others who may work with your code in the future. Clear
+names describe what a variable represents or what a function does, which
+helps prevent confusion and reduces the chances of making mistakes. Good
+naming also makes it easier to maintain and update your code over time.
+
+TODO: Something about scope (see quote)
+
+TODO: See 'art of readable code, chap 2'
+
+### Keep it simple
+
+Simple and straightforwarder code
+
+DOnt; make the reader think too musch
+
+
+### Don't repeat yourself (DRY)
+
+write functions
+document function (use genAI)
+
+### Single responsibility
+
+Each function should do one thing and do it well
+
+### Comments
+
+See chapter about documentation
+
+### Error handling
+
+Check inputs and throw error when needed
+catch errors, not unexpected results
+
+### refactoring
+
+not without a test
+
+
+### Reviewing
+
+how to review (should this be a separate chapter?)

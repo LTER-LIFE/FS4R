@@ -1,0 +1,93 @@
+# You are not alone
+
+In the era of computational science, the roles of scientific modeller
+and data scientist are inseparable from that of a software developer.
+Off-the-shelf commercial software rarely addresses the unique needs of
+every specialized research model, so scientists often find themselves
+building or adapting code to fit their specific requirements.
+
+Like many in the field, you may have developed your programming skills
+out of necessity rather than through formal education. Most academic
+programs offer only minimal training in programming—typically just
+enough for basic data analysis or simple simulations, but not for
+developing complex and maintainable software. 
+
+This means you are often solely responsible for creating, debugging,
+maintaining, and expanding your computational models. If you’re
+fortunate, you are part of a supportive team where you can share
+experiences, frustrations, and discuss different modelling approaches,
+but many researchers face these technical challenges on their own.
+
+As a result, researchers often end up working in a highly individualistic
+manner, prioritizing scientific discoveries and the advancement of
+knowledge over the craft of software engineering. The primary focus
+becomes achieving results and fulfilling research objectives, since
+those are the things you are hired for.  While this approach can be
+innovative and agile, the resulting code is often difficult to maintain,
+scale or share. This reinforces the habit of working in isolation rather than
+prioritizing collaboration or best practices in software development.
+
+Against this backdrop, what can improving software skills offer to the
+lone, individualistic,  modeller beyond abstract “best practices”? The
+answer is simple: developing robust coding skills directly leads to
+more impactful, efficient, and personally rewarding research. Because,
+you are not alone!
+
+Moving beyond an individualistic mindset and embracing a more
+collective approach can be truly transformative—both for you and the
+community. Sharing your knowledge and code, collaborating with peers,
+do more than contribute to the broader field; they accelerate your own
+learning and success. Working openly with others exposes you to new
+perspectives, more efficient techniques, and innovative solutions to
+complex problems.
+
+Collaboration also enhances the robustness and reliability of your
+research. Colleagues and collaborators can spot errors, suggest
+improvements, and help validate your results, increasing the
+credibility and impact of your work. By joining forces with others,
+you gain access to a broader range of expertise, making it easier to
+tackle ambitious projects that might be overwhelming alone.
+
+Furthermore, being part of a collaborative community opens doors to
+valuable networking opportunities, potential partnerships, and new
+projects. It fosters a culture of mutual support, where knowledge is
+shared and challenges are overcome collectively. Ultimately, seeing
+yourself as part of a larger, interconnected network not only advances
+your own research but also propels the progress of the entire field.
+In embracing collaboration, you find that the rewards—professional,
+intellectual, and personal—are far greater than the sum of individual
+efforts. If only the others would just understand your code.
+
+But it is not all about how you benefit. Perhaps the most immediate and
+personal incentive for improving coding skills is the profound benefit
+to “your future self.” Every modeller has experienced the agony of
+revisiting old code, only to be perplexed by cryptic variable names,
+tangled logic, or the dreaded “final_v2_reallyfinal.py.” By adopting
+better practices—such as clear naming, meaningful comments, version
+control, and tidy organization—you transform code from a messy trail
+to a clear roadmap. This means that when deadlines loom, manuscripts
+need revision, or new questions arise, you can rapidly understand
+and extend your own work rather than restarting from scratch. Clean,
+well-documented code is a gift to yourself, sparing you hours of confusion
+and frustration later.
+
+It’s easy to think of coding skills as simply the ability to
+write functional code, but truly effective scientific modelling
+goes much further. Good coding practice isn’t just about the code
+you write; it’s about how you organize, track, and communicate
+your work. Good documentation, for example, helps others—and your
+future self—understand what your code does and why you made certain
+choices. Version control allows you to experiment freely while keeping
+an organized history of your changes, making it easy to revert mistakes
+or collaborate with others. Testing, on the other hand, ensures your
+model behaves as expected, giving you confidence in your results.
+
+While writing code is an essential starting point, these practices
+are what transform code from a personal tool into a robust, reliable,
+and valuable resource for scientific progress.  If you focus only on
+getting your code to run, you might achieve results in the short term, but
+investing time in these broader skills pays dividends in reproducibility,
+efficiency, and collaboration. 
+
+
+        

@@ -1,0 +1,46 @@
+
+# Reproducible Research
+
+Reproducible research is the practice of organizing and documenting data,
+code, and methods so that others can independently recreate the same
+results from the same materials.
+
+In recent years, the integrity and reliability of scientific research
+have faced growing scrutiny across disciplines. Increasingly, the
+scientific community recognizes that progress hinges not only on the
+novelty of results, but also on the transparency and reproducibility of
+the research underlying those results. Reproducibility—the capability
+for others to independently confirm results using the same data, code,
+and methods—is no longer optional. It is the minimum standard for
+reliable scientific work (@peng_reproducible_2011).
+
+Too often, scientific findings cannot be replicated because the
+underlying data or computational steps are inaccessible or poorly
+documented. This erodes trust and stalls the advancement of knowledge. The
+@turing_2019 offers a practical manifesto for change,
+outlining steps researchers can take to embed reproducibility into
+their everyday practice. These principles, while simple in concept,
+are transformative in their effect.
+
+A cornerstone of reproducible research is automation: using scripts
+and workflow management tools to carry out analyses reduces manual
+errors and makes the research process transparent. As described in
+[Chapter @sec-goodcodingpractices] and [Chapter @sec-testingvalidation],
+automating analysis not only streamlines work, but also enables reliable
+testing and validation of results.
+
+Equally vital is thorough documentation. Documenting your
+choices—how data were obtained and cleaned, which methods and
+tools were used—ensures transparency and supports both your future
+self and your colleagues. This principle connects directly to 
+[Chapter @sec-documentation], where practical
+guidance is offered for keeping project and code documentation up-to-date.
+
+Finally, robust version control (see [Chapter @sec-versioncontrol])
+should become a staple in every researcher’s toolkit. By tracking
+changes to code and documentation, version control systems like Git
+support collaborative work and make it easier to identify and correct
+errors introduced during development. This practice also complements
+team workflows described in Deployment, Maintenance & Collaboration.
+
+

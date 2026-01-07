@@ -17,7 +17,7 @@ started.
 ## Reading the RS4F guidance
 
 You can read this guidance [online](https://lter-life.github.io/FS4R/)
-of you can download is as a [PDF document](https://lter-life.github.io/FS4R/FS4R.pdf)
+of you can download it as a [PDF document](https://lter-life.github.io/FS4R/FS4R.pdf)
 
 ## Licence
 

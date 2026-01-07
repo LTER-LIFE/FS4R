@@ -1,4 +1,87 @@
 # Preface {.unnumbered}
 
-This is the preface
+This guide provides practical recommendations and best practices to
+help you write good research software, make it Findable, Accessible,
+Interoperable, and Reusable (FAIR). Following FAIR principles
+increases the visibility, reusability, and reproducibility of your software.
+Using these guidance you are also supporting reproducible science and collaboration within
+your research community.
+
+## Status
+
+This guide is currently under development. The content is a work in
+progress and will be continuously improved. If you have any
+suggestions or comments, please open an issue on
+[GitHub](https://github.com/LTER-LIFE/FS4R/) or contact the authors.
+
+
+## To Do
+
+Since this is the preface and the first part of the book, it is logical
+place to put an annotated outline of the rest of the book. This will
+help to structure the book and to see what is missing.
+
+Please note, this is an extensive list and maybe somewhat ambitious.
+During the development of this book we might drop a few subjects (or
+squeze them in other chapters) to keep the book manageable.
+
+1.  Introduction (this chapter)
+    -   Purpose and scope
+    -   Who is this book for?
+
+2.  Project Planning
+
+    -   Overview of the software/project life cycle
+    -   Defining objectives and requirements
+    -   Data Management Plan (DMP)
+    -   Stakeholder identification
+
+3.  Version Control & Initial Setup (versioncontrol.qmd)
+
+    -   Creating a Git repository
+    -   Essential files: README, LICENSE, .gitignore, etc.
+    -   Collaboration and branching strategies
+
+4.  Conceptual Design
+    -   Developing the conceptual/data model
+    -   Mapping workflow steps (import, clean, transform, model, visualize, report)
+    -   Flow diagrams (e.g., Mermaid)
+
+5.  Data Management
+
+    -   Organizing and storing data
+    -   Data formats and naming conventions
+    -   Data sharing and archiving policies
+
+6.  Implementation & Coding Standards (goodcoding.qmd)
+
+    -   Writing clean, efficient, maintainable code
+    -   Applying style guides and conventions
+    -   Structuring codebase (modules, scripts, notebooks)
+
+7.  Documentation (documentation.qmd)
+
+    -   Project documentation (README, CHANGELOG, CONTRIBUTING)
+    -   Code documentation (comments, docstrings, notebooks)
+    -   Keeping documentation up-to-date
+
+8.  Reproducibility & Environment Management (reproducibility.qmd)
+
+    -   Definitions: reproducibility, replicability, reuse
+    -   Managing environments (Conda, Docker, renv)
+    -   Ensuring analyses can be reliably repeated (notebooks, scripts, dependencies)
+
+9.  Testing & Validation (testing.qmd)
+
+    -   Unit, regression, and integration tests
+    -   Validation and verification of results
+    -   Automated testing tools and workflows
+
+10. Deployment, Maintenance & Collaboration
+
+    -   Sharing code and results (repositories, archives)
+    -   Licensing and citation
+    -   Persistent identifiers (DOIs)  
+    -   Updating, maintaining, and extending the project
+    -   Team communication and best practices
 
