@@ -21,9 +21,11 @@ or you can download it as a [PDF document](https://lter-life.github.io/FS4R/FS4R
 
 ## Licence
 
-This guide is licensed under a [Creative Commons Attribution-Noncommercial 4.0 International licence](https://creativecommons.org/licenses/by-nc/4.0/)
 
-See the [LICENCE](LICENCE.md) for the license text.
+All documentation and chapter materials in this repository are made available under the [Creative Commons Attribution license][cc-by-human].
+The following is a human-readable summary of (and not a substitute for) the [full legal text of the CC BY 4.0 license][cc-by-legal].
+
+See the [LICENSE](LICENSE.md) for the license text.
 
 ## How to contribute
 
