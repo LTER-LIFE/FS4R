@@ -1,5 +1,4 @@
-# Contributing to the RIVM Science Cookbook
-
+# Contributing to the FS4R Guide
 Welcome, and thank you for your interest in contributing to the
 FAIR Software for Research Guidance.  —a collaborative resource for
 uniform research software practices.  This guidance is based on the best
