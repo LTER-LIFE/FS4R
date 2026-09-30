@@ -1,0 +1,218 @@
+# Good Data Management
+
+Good data management is essential for reliable, reproducible, and
+compliant research. At the RIVM, all data work should begin with a solid
+DMP, which provides a framework for organizing, storing, and maintaining
+data responsibly throughout the project and data life cycle.
+
+Please note: This section explains general rules for good data management
+that are meant for everyone at RIVM.  For more practical advice or tips
+that fit your own team or department, please check the agreements and
+documents used in your group.  These local guidelines often have more
+specific recommendations for your daily work.
+
+## Data Organization and Structure
+
+### Folder Structure
+
+A clear and consistent 📁 folder structure is essential for organizing
+your project and making it understandable for both yourself and
+collaborators. Most reproducible research guides recommend a structure
+that separates raw data, processed data, scripts, and documentation,
+such as:
+
+```         
+/project-root
+  /data
+    /raw
+    /processed
+  /scripts
+  /docs
+```
+
+This example is widely recognized and provides an intuitive overview
+of the main project components. However, it's important to consider
+how data management interacts with version control. If your project
+is tracked using Git, as recommended in @sec-versioncontrolj
+you should avoid adding large datasets, especially raw data,
+directly to your repository. Instead, store data in a dedicated database,
+data management system (DMS), or a secure network location (e.g., R:
+or S: drive). If you need to work with local copies, keep them in a
+separate project folder (such as ./data), and ensure that these files
+are excluded from version control using .gitignore.
+
+Another consideration is the /processed folder. If your analyses and
+transformations are fully reproducible, processed data can be generated
+on demand and may not need to be stored permanently. In this case,
+the folder can serve as a temporary workspace or cache, rather than a
+repository of final results.
+
+Given these nuances, we suggest two approaches:
+
+1.  Standardized outline for publications:
+    For projects intended for publication or broader sharing
+    (such as open source releases), we recommend adopting the RIVM
+    [template-scientific-repo](https://github.com/rivm-syso/Template-scientific-repo)
+    folder structure. This template provides a well-organized framework
+    for managing scientific modelling projects, especially those meant
+    for production, collaboration, or future publication. It embodies best
+    practices for clarity, reproducibility, and maintainability, and aligns
+    with RIVM guidelines for publishing repositories. The template serves as
+    a robust starting point, while you are free to expand and customize within
+    your project, the base structure ensures your repository remains suitable
+    for open publication and sharing. Importantly, it separates code from
+    data, encouraging you to keep datasets outside the code repository and,
+    when possible, publish them in dedicated data repositories for greater
+    openness and compliance.
+
+2. Custom Structure:
+    Alternatively, you may opt for a custom folder structure tailored to the
+    unique needs of your project and team. This approach is especially useful
+    for complex workflows or when specific requirements must be met, such
+    as mandatory structures for programming language packages, registration
+    processes, or cases where only a portion of the code or data can be made
+    publicly available due to security or privacy concerns. When designing
+    a custom structure, prioritize clarity, reproducibility, and effective
+    collaboration: handle data thoughtfully, keep scripts and documentation
+    organized, and clearly communicate where files are stored and how they
+    are accessed. Always document your structure in the project README so
+    that collaborators and future users can easily navigate your project.
+
+By choosing the structure that best fits your goals, whether standardized
+for publication or customized for specialized workflows, you support both
+open science and the practical needs of your research. Separating code
+and data not only makes open publication easier, but also enables you
+to publish datasets in appropriate data repositories, further increasing
+transparency and impact.
+
+### File Naming Conventions
+
+Consistent and descriptive file names make it easier to find, organize,
+and track files throughout your project 🏷️.
+
+- Use clear and meaningful names that reflect the content and purpose
+  of the file (e.g., airquality_data.csv). 
+- Avoid spaces, special characters, and ambiguous abbreviations. Use
+  underscores _ or hyphens - to separate words.  
+- Document your naming convention in the project README so everyone
+  follows the same system.
+
+### Metadata and Documentation
+
+Metadata and documentation help others understand your data and its context.
+
+- Add a README file to each folder explaining its contents and purpose.
+- Use standardized metadata formats (such as Dublin Core or other metadata standard) to describe datasets: who collected the data, when, how, and what it contains.
+- Keep documentation up to date as your data or project changes.
+
+## Data Storage and Backup
+
+### Storage Options 💾
+
+Choose secure, approved storage solutions to protect data and ensure accessibility.
+
+- Store data on network drives or approved cloud platforms.
+- Avoid using personal computers or local drives for sensitive or critical data.
+- (If possible) Use a Data Management System like iRODS
+
+### Backups 🔄
+
+Backups protect against data loss from accidents or technical issues.
+
+- Set up automatic, scheduled backups for all important data.
+- Store backups in a secure location, separate from the original data.
+- Test backup recovery procedures regularly to make sure you can restore data if needed.
+
+### Data Security 🔒
+
+Keep data safe by controlling access and protecting sensitive information.
+
+- Restrict access to files based on team roles and responsibilities.
+- Use strong passwords and two-factor authentication for data systems when available.
+- Encrypt sensitive data, especially when storing or transferring outside RIVM secure environment.
+- Keep a record of who has access to which data.
+
+## Data Quality Assurance
+
+Ensuring data quality is essential for robust, reproducible research. Good
+data quality assurance covers validation, documentation and provenance,
+and version control. Recent policies, like the [European Health Data Space
+(EHDS)](https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space-regulation-ehds_en)
+place additional requirements on data quality. Make sure you are
+familiar with these guidelines, as compliance is mandatory and impacts
+both data sharing and publication. Below we mention some key practices
+for data quality.
+
+### Data Validation
+
+Quality checks ensure your data is complete, accurate, and consistent.
+
+- Validate data for missing values, duplicates, and outliers.
+- Use automated scripts or tools to perform regular data checks.
+- Document all validation steps and corrections in internal logging methods or in files like CHANGELOG or README.
+
+### Data Provenance and Documentation
+
+Understanding where your data comes from and how it changes over time is critical for transparency and reproducibility.
+
+- Record data provenance: Clearly document how data was obtained, collected, processed, and any transformations applied.
+- Track data sources and versions: Note the original source, date of access, version, and any identifiers (such as a DOI or persistent link
+- Link code and data: Reference the specific data version used in your analysis, so others can reproduce or verify your results.
+- Use a DATA_README.md or similar file to log details about each dataset, including file descriptions, formats, and any important caveats.
+
+### Version Control
+
+Version control is essential for reproducibility and collaboration. While
+Git is the best tool for tracking changes to your code, scripts, and
+documentation, it is not well-suited for managing large datasets or
+binary data.
+
+- Use Git to track your analysis scripts, notebooks, configuration files, and documentation.
+- Commit changes regularly with clear, descriptive messages.
+- Maintain a CHANGELOG file to record significant updates or corrections to your code or analysis.
+
+Managing data files:
+
+- For small, text-based datasets (e.g., small CSVs): you can version these in Git, but keep them minimal.
+- For larger datasets or binary files:
+  - Do not store large data files directly in Git. This can quickly bloat your repository and slow down collaboration.
+Instead, use:
+  - Data repositories (e.g., Zenodo, Figshare, or similar for published public data).
+  - Cloud storage (e.g., Surfdrive, Nextcloud, or a dedicated data server).
+  - Git LFS (Large File Storage) for versioning data files if your workflow requires it, but be aware of storage limits and setup requirements.
+- Always document the source, version, and location of your data in your repository (e.g., in the README.md).
+
+**Tip**: Always keep your data and code management separate, but
+well-documented and linked. This makes your research more transparent
+and reproducible.
+
+## Data Sharing and Access
+
+### Internal Sharing
+
+Share data securely with colleagues using approved RIVM platforms.
+
+- Set permissions thoughtfully, giving access only to those who need it.
+- Regularly remove unnecessary or outdated files from shared folders.
+- Remove or (pseudo)anonymise any personal or sensitive information before sharing.
+- Clearly document which data is shared, who the recipients are, and under what conditions or agreements the sharing takes place.
+
+### External Sharing
+
+When sharing data outside the organization, follow your institutes policies in addition to the internal sharing tips.
+
+- Use data repositories for data publication en code repositories for code publication, following institute, funder or journal requirements.
+- Use SUrf research drive or Surfdrive for external data transfer.
+- If sharing data openly, specify the applicable open license (such as CC-BY or CC0) and ensure users understand any restrictions or requirements.
+
+## Data Archiving and Long-term Preservation
+
+### Archiving 🗄️
+
+Archive final datasets and documentation using approved systems. 
+
+- Discuss how to ensure long-term storage and when archiving will take place.
+- Ensure metadata and documentation are complete and accurate.
+- Mark datasets as final and ready for archiving when needed.
+- Keep in mind that metadata should be preserved permanently, even if datasets are deleted.
+
