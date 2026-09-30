@@ -21,16 +21,26 @@ or you can download it as a [PDF document](https://lter-life.github.io/FS4R/FS4R
 
 ## Licence
 
-TBD
+
+All documentation and chapter materials in this repository are made available under the [Creative Commons Attribution license][cc-by-human].
+The following is a human-readable summary of (and not a substitute for) the [full legal text of the CC BY 4.0 license][cc-by-legal].
+
+See the [LICENSE](LICENSE.md) for the license text.
 
 ## How to contribute
 
-Yes, contributions are very welcome! Either contact us or create a
-fork and send us a pull request.
+We encourage contributing to this guidance. You can submet your own
+suggestions or your own work as pull request or open an issue. See the 
+[CONTRIBUTING](CONTRIBUTING.md) for more info.
 
 In this repository you find two branches (among others). The 'main'
-branch is the branch which is published. The 'draft' branch is the
-version we are working on. Other branches relate to issues.
+branch is the branch with the last published version (see the
+[CHANGELOG](CHANGELOG.md)) The 'draft' branch is the version we are
+working on. Other branches relate to issues and features.
+
+For our community we follow the [Contributor Covenant](https://www.contributor-covenant.org/).
+Make sure you have read the [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) if you want the make a
+contribution. 
 
 # Authors
 
