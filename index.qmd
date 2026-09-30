@@ -28,56 +28,70 @@ squeze them in other chapters) to keep the book manageable.
 1.  Introduction (this chapter)
     -   Purpose and scope
     -   Who is this book for?
+    -   Current status: work in progress
 
-2.  Project Planning
+2.  Why (yourenotalone.qmd)
+    -   why you should follow this guide
+    -   Current status: draft ready  
+
+3.  Project Planning
 
     -   Overview of the software/project life cycle
     -   Defining objectives and requirements
     -   Data Management Plan (DMP)
     -   Stakeholder identification
+    -   related to chapter datamanagement?  
+    -   Current status: not started yet
 
-3.  Version Control & Initial Setup (versioncontrol.qmd)
+4.  Version Control & Initial Setup (versioncontrol.qmd)
 
     -   Creating a Git repository
     -   Essential files: README, LICENSE, .gitignore, etc.
     -   Collaboration and branching strategies
+    -   Current status: work in progress
 
-4.  Conceptual Design
+5.  Conceptual Design (conceptualmodel.qmd)
     -   Developing the conceptual/data model
     -   Mapping workflow steps (import, clean, transform, model, visualize, report)
     -   Flow diagrams (e.g., Mermaid)
+    -   Current status: draft ready  
 
-5.  Data Management
-
-    -   Organizing and storing data
-    -   Data formats and naming conventions
-    -   Data sharing and archiving policies
-
-6.  Implementation & Coding Standards (goodcoding.qmd)
-
-    -   Writing clean, efficient, maintainable code
-    -   Applying style guides and conventions
-    -   Structuring codebase (modules, scripts, notebooks)
-
-7.  Documentation (documentation.qmd)
-
-    -   Project documentation (README, CHANGELOG, CONTRIBUTING)
-    -   Code documentation (comments, docstrings, notebooks)
-    -   Keeping documentation up-to-date
-
-8.  Reproducibility & Environment Management (reproducibility.qmd)
+6.  Reproducibility & Environment Management (reproducibility.qmd)
 
     -   Definitions: reproducibility, replicability, reuse
     -   Managing environments (Conda, Docker, renv)
     -   Ensuring analyses can be reliably repeated (notebooks, scripts, dependencies)
+    -   Current status: work in progress
 
-9.  Testing & Validation (testing.qmd)
+7.  Data Management (datamanagement.qmd)
+
+    -   Organizing and storing data
+    -   Data formats and naming conventions
+    -   Data sharing and archiving policies
+    -   Current status: work in progress
+
+8.  Implementation & Coding Standards (goodcoding.qmd)
+
+    -   Writing clean, efficient, maintainable code
+    -   Applying style guides and conventions
+    -   Structuring codebase (modules, scripts, notebooks)
+    -   Current status: draft ready  
+
+9.  Documentation (documentation.qmd)
+
+    -   Project documentation (README, CHANGELOG, CONTRIBUTING)
+    -   Code documentation (comments, docstrings, notebooks)
+    -   Keeping documentation up-to-date
+    -   Current status: draft ready  
+
+10.  Testing & Validation (testing.qmd)
 
     -   Unit, regression, and integration tests
     -   Validation and verification of results
     -   Automated testing tools and workflows
+    -   Current status: work in progress
 
-10. Deployment, Maintenance & Collaboration
+11. Deployment, Maintenance & Collaboration
 
     -   Sharing code and results (repositories, archives)
     -   Licensing and citation

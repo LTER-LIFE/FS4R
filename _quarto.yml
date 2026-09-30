@@ -10,6 +10,8 @@ book:
     - intro.qmd
     - summary.qmd
     - yourenotalone.qmd
+    - datamanagement.qmd
+    - conceptualmodel.qmd
     - reproducible.qmd
     - documentation.qmd
     - versioncontrol.qmd

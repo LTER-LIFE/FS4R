@@ -1,4 +1,70 @@
 
 # Testing and Validation {#sec-testingvalidation}
+**Chapter 8 FS4R: Testing & Validation**
 
+Thorough testing and validation are essential for producing reliable, reproducible, and impactful research results. In scientific computing and data science, rigorous testing not only increases confidence in your findings, but also helps ensure that analyses and models behave as intended across a variety of scenarios. By adopting systematic approaches to testing and validation, researchers safeguard against errors, support collaboration, and ensure compliance with quality assurance standards for both data and code.
+
+A cornerstone of reproducible research is automation: using scripts and workflow management tools to carry out analyses reduces manual errors and makes research processes transparent. As described in [Chapter 7](https://lter-life.github.io/FS4R/goodcoding.html) and [Chapter 8](https://lter-life.github.io/FS4R/testing.html), automating analysis not only streamlines work, but also enables reliable testing and validation of results.
+
+Testing is not just for software engineers. It is a vital practice for anyone writing scripts, building models, or conducting data analyses.
+
+**Unit, regression, and integration tests**
+
+Three primary types of tests help ensure the quality of your code and results:
+
+**Unit tests** check individual functions, modules, or components to verify that each part works as expected in isolation.
+
+**Regression tests** help ensure that changes or updates do not introduce new bugs or break existing functionality. They compare current outputs to previously validated results.
+
+**Integration tests** examine how different parts of your workflow interact, verifying that combined components work together correctly.
+
+In practice, even simple analyses can benefit from unit tests (e.g., verifying the output of a data cleaning function), while larger projects should use regression and integration tests to maintain stability as code evolves. Many programming languages and environments—including R and Python offer libraries and tools to help you write and run these tests (e.g., testthat for R, pytest for Python).
+
+Start simple: Even a single unit test can catch common errors early.
+
+Organize your tests: Place all tests in a tests/ directory at the root of your project.
+
+Name test files clearly: Use names like test\_data\_cleaning.R or test\_model.py for clarity.
+
+For more information check the [Code Testing chapter in the Turing Way](https://book.the-turing-way.org/reproducible-research/testing/), there you will find specific information for [Unit Testing](https://book.the-turing-way.org/reproducible-research/testing/testing-unittest/), [Integration testing](https://book.the-turing-way.org/reproducible-research/testing/testing-integrationtest/) as well as [Regression testing](https://book.the-turing-way.org/reproducible-research/testing/testing-acceptance-regression/), among others.
+
+**Validation and verification of results**
+
+Validation and verification are critical for ensuring that your models and analyses are both technically correct and scientifically meaningful.
+
+**Verification** answers the question: _Did I build the model or analysis correctly?_ It checks that your implementation matches the intended design, using tests, code review, and reproducibility checks.
+
+**Validation** asks: _Did I build the correct model or analysis?_ It assesses whether your results make sense in context, comparing outputs to known standards, experimental data, or expert expectations.
+
+Validation can include statistical checks, cross-validation, benchmarking against independent datasets, as well as sensitivity and uncertainty analyses. Sensitivity analysis explores how changes in input parameters or assumptions affect your results, while uncertainty analysis quantifies the overall confidence and variability in your findings due to inherent data or model uncertainties.
+
+Documenting your validation and verification steps is important for transparency, collaboration, and if appropriate compliance towards standards, or legal frameworks. Therefore, it is wise to:
+
+Compare model outputs to a gold standard: Use reference datasets or known results where possible.
+
+Involve a colleague: Peer review of code or results can catch mistakes you may overlook.
+
+Document every validation/verification step: Keep a validation\_log.md or similar file in your project.
+
+**Automated testing tools and workflows**
+
+By automating your analyses with scripts, notebooks, and workflow management tools, you make your processes more transparent, repeatable, and less prone to human error. Manual manipulation of data and results, common in traditional approaches, invites mistakes and makes retracing steps nearly impossible. Automation streamlines research, saving time and reducing uncertainty.
+
+Several tools are available to support automated testing in data science projects:
+
+**Testing frameworks**: testthat (R), pytest (Python), and others enable you to systematically test your code and results.
+
+**Continuous integration (CI) systems**: Services like GitLab CI or GitHub Actions can automatically run your tests whenever code is updated, helping catch errors early and maintain project quality.
+
+If you use GitHub Actions for continuous integration, be aware that there are limits on the maximum run time for each job. Make sure your workflows complete within around 30 minutes. If your tests or workflows are likely to exceed this limit, consider splitting them into smaller jobs.
+
+**Workflow management**: Tools like drake or targets in R, snakemake in Python, enable automated, reproducible execution of complex analysis pipelines.
+
+Set up CI for your project: Add a .gitlab-ci.yml or .github/workflows/test.yml file so tests run automatically on every push.
+
+Automate as much as possible: Use Makefiles, workflow tools, or scripts to avoid manual steps.
+
+Regularly review CI results: Fix failed tests before proceeding.
+
+Integrating automated testing and workflow management into your research practices not only improves reliability, but also makes it easier to share your work, collaborate with others, and comply with standards for transparency and quality.
 TBD
