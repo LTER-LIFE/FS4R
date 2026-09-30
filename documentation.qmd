@@ -1,182 +1,242 @@
 # Documentation {#sec-documentation}
-**Chapter 5 FS4R: Documentation**
 
-Vital is thorough documentation. Documenting your choices—how data/scripts were obtained, code is setup, how data was cleaned, debugging of code was performed, which methods and tools were used, etc., etc., ensures transparency and supports both your future self and your colleagues.
+Good documentation is essential for transparency, collaboration,
+reproducibility, and long-term usability of scientific software and
+data science projects. Documentation is not only a description of the
+code or data, but also a guide for users and contributors to
+understand the purpose, structure, and usage of the repository. For
+example, it also includes licensing information, citation metadata,
+and contribution guidelines.
 
-**Project documentation (README, CHANGELOG, CONTRIBUTING)**
+In a code project, documentation is typically organized into two main
+categories:
+1. **Code documentation**: This includes inline comments, docstrings,
+   and notebooks that explain the functionality of the code, its
+   inputs and outputs, and any relevant details for users and
+2. **Repository documentation**: This includes files like README.md,
+   CHANGELOG.md, and CONTRIBUTING.md that provide an overview of the
+   project, its purpose, how to use it, and how to contribute.
+   developers.
 
-Project documentation helps users and contributors understand, use, and maintain your repository. Files are strongly recommended when publishing within the LTER-LIFE GitHub repository:
+Besides these two main categories, documentation can also include
+tutorials, examples, and other resources that help users and
+contributors understand and use the repository effectively.
 
--   **README.md**: Provides an overview of the project, its purpose, and how to use it. Should include:
-    -   Project objectives and description
+
+## Code documentation (comments, docstrings, notebooks)
+
+In @sec-goodcoding, we discussed the importance of writing clean,
+efficient, and maintainable code. However, even well-written code can be
+difficult to understand without proper documentation. Code documentation
+serves as a bridge between the code and its users, providing context,
+explanations, and guidance for understanding and using the code
+effectively.
+
+You can document your code in several ways. You can use inline
+comments to explain specific lines or blocks of code. You can use
+docstrings to provide detailed explanations of functions, classes,
+and modules. You can also use notebooks to combine code, narrative,
+and output in a single document, making it easier to follow the logic
+and results of your analysis.
+
+
+### Code comments
+
+When reading code, you often must guess what was inside the head of
+the developer who wrote it. When writing code it is important to keep
+in mind that others (and your future self) will read it. Comments are
+a way to communicate your thought process, intentions, and decisions.
+This valuable information is otherwise lost. Only the code and a lot
+guessing remains.
+
+Comments take space and time to read. So it is better if
+it is actually worth reading. When writing comments it is important to
+realise what not to comment. If the code is self-explanatory, comments
+are not needed. For example in the next code snippet:
+
+```r
+# Generate 100 random numbers from a normal distribution
+random_numbers <- rnorm(100)  
+# Calculate the average of the random numbers
+average <- mean(random_numbers)  
+
+```
+
+If you have any clue about R code, it is obvious what the code does.
+So it is better not to comment this code.
+
+Also, comments should not explain bad written code. For example to
+explain a badly named variable:
+
+```r
+x <- c(1:5)
+# x record id from dataset
+
+```
+
+In the above example, x could be better named as record_id.
+
+With a comment you can record your thoughts. @boswell_Foucher
+suggest to see comments as "director commentary" in a movie. The director
+can explain why a scene is shot in a certain way, or why a certain actor
+was chosen. In the same way, you can explain your code with comments.
+
+For example, if we reuse the example of the previous chapter, we can
+add comments to explain the code:
+
+```r
+variables <- c("Petal.Width", "Sepal.Length", "Sepal.Width")
+
+# Fit linear models for each variable in the iris dataset. For
+# performance reasons, we use lapply. A for loop was to slow.
+models <- lapply(variables, function(var) {
+  lm(Petal.Length ~ get(var), data = iris)
+})
+
+# We assign names to the list of models so we can reference them
+# easily later.
+names(models) <- variables
+```
+
+Code comments can also help during code review. For example, if you
+tried several approaches to solve a problem, you can comment that the
+chose approach was the best one, and why. This can help reviewers
+understand why you made certain decisions and provide feedback on your
+approach.
+
+Code comments can also be used to paint the big picture of your project. I
+you have a complex project with multiple scripts, functions, etcetera,
+then you also have a conceptual model. (REF chapter concept model) When
+painting the big picture, you can explain how the different parts of the
+project fit together by referring to the conceptual model. For example,
+for a data tidying script:
+
+```r
+# This is the data tidying script for the project. It takes raw data
+# prepared in the import script and tidy this data so it can be used by
+# the analysis script.
+
+result <- do_a_lot_of_data_tidy_stuff(data)
+```
+
+If you need to write a lot of commentary, than maybe you should
+consider writing a notebook instead of a script.
+
+### Notebooks
+
+In a notebook you can combine code, narrative, and output in a single document, making it
+easier to follow the logic and results of your analysis. Notebooks are
+especially useful for data exploration, analysis, and visualization,
+as they allow you to document your thought process and findings
+alongside the code that produced them. Notebooks can be converted into
+other formats, like html pages or pdf documents. This makes it also
+easier to share your work with others who may not be familiar with the
+programming language or environment you are using. If someone asks you
+to perform a certain analysis, you can send them a notebook with the
+code and the results, so they can see exactly what you did and how you
+did it. You can even hide the code and only show the results, if you
+want to. 
+
+Writing a notebook in R is different then writing a notebook in
+Python. In R, you can use R Markdown (.Rmd) or Quarto to create
+notebooks. In Python, you can
+use Jupyter Notebooks (.ipynb) to achieve the same goal. Both tools
+allow you to include text, images, and other media alongside your
+code, making it easier to explain your analysis and results. It goes
+to far to explain how to write a notebook in this book. For more
+information, see the [R Markdown](https://rmarkdown.rstudio.com/) and
+[Quarto](https://quarto.org/) documentation for R, and the [Jupyter
+Notebook](https://jupyter.org/) documentation for Python.
+
+A notebook can also be considered code, but with a lot of
+documentation. Therefore, notebooks should also be under
+version control and reviewed by others.
+
+### Docstrings
+
+Docstrings are a way to document functions, classes, and modules in a
+structured and standardized format. They provide a clear and concise
+description of the purpose, parameters, return values, and exceptions
+of a function or class, making it easier for users and contributors to
+understand how to use the code effectively. Docstrings are typically
+placed at the beginning of a function or class definition. 
+
+In R docstrings are written using the
+[roxygen2](https://roxygen2.r-lib.org/) package, which allows you to
+write documentation in a simple and readable format. Roxygen2 uses
+special tags to indicate the purpose of the function, its parameters,
+return values, and any exceptions that may be raised. The
+documentation is then automatically generated from the roxygen2
+comments and can be included in the package documentation. Even if you
+are not creating a package, you can use roxygen2 to document your
+functions. The documentation will be generated in the main folder of
+your project. When you move your functions into a package, the
+documentation will be included. For more information about using
+roxygen2 in packages, see the [Function
+Documentation](https://r-pkgs.org/man.html) chapter of the R Packages
+book by Hadley Wickham. 
+
+In Python, docstrings are written using triple
+quotes (""" or ''') and follow the [PEP 257
+conventions](https://peps.python.org/pep-0257/). The docstring should
+be placed immediately after the function or class definition and
+should provide a clear and concise description of the purpose,
+parameters, return values, and exceptions of the function or class
+
+## Repository documentation (README, CHANGELOG, CONTRIBUTING)
+
+The RIVM sets clear standards and minimum
+requirements for documentation in Git repositories, with a focus on
+[open source](https://opensource.org/osd) This section describes those
+standards and provides practical guidance.
+
+Repository documentation helps users and contributors understand, use, and maintain your repository.
+At the RIVM, the following files are required when publish the Git repository and are strongly encourage for internal repositories:
+
+-   🏷️ README.md: Provides an overview of the repository, its purpose, and how to use it. Should include:
+    -   Project or repository objectives and description
     -   Instructions for installation and use
     -   Folder structure explanation
     -   Example commands or workflows
     -   Contact details and links to further resources
-    -   References to publications, datasets, or related work (with persistent identifiers)
-    -   Information about the computational environment
--   **CHANGELOG.md**: Keeps a log of changes to the project, including new features, fixes, improvements, and version numbers. Best practices:
+    -   References to publications, datasets, or related work (with persistent identifiers) where possible
+    -   Information about the computational environment (which files to use for setup: requirements.txt, renv.lock, etc.)
+-   📅 CHANGELOG.md: Keeps a log of changes to the repository, including new features, fixes, improvements, and version numbers. Best practices:
     -   Use semantic versioning (e.g., 1.0.0) or year-based versioning (e.g., 2024.1)
     -   Clearly describe changes for each release
     -   Place the CHANGELOG in the root of the repository
     -   Follow the [Keep a Changelog style guide](https://keepachangelog.com/en/1.1.0/)
--   **CONTRIBUTING.md**: Explains how others can contribute, report issues, and suggest improvements. Should address:
+-   🤝 CONTRIBUTING.md: Explains how others can contribute, report issues, and suggest improvements. Should address:
     -   Guidelines for submitting issues, merge/pull requests
     -   Coding standards and review process
     -   How to contact maintainers or admins
     -   Reference to the Code of Conduct
     -   Data policies (e.g., do not upload sensitive data, use mock/example data for demonstration)
     -   Any domain-specific quality assurance steps or required checks before publication
--   **LICENSE:** Describes how others may use, modify, or distribute your work. Keep in mind:
+-   ⚖️ LICENSE: Describes how others may use, modify, or distribute the work. Important to keep in mind
     -   Code cannot be reused if no license exists in the repository.
-    -   We recommend the use of [open licenses](https://rivmnl.sharepoint.com/sites/Onderzoeks-enDataloketRIVM/SitePages/Open-Licenties.aspx) for software such as the [EULP v1.2](https://choosealicense.com/licenses/eupl-1.2/) and compatible licenses (e.g., Apache, GNU GPL or MIT), depending on the situation for reusability of the repository
-    -   Check [https://choosealicense.com/](https://choosealicense.com/) or contact data stewards of NIOO, RIVM, or UvA for questions about open licenses.
--   **CITATION.cff** A machine-readable file providing citation metadata to allow others to properly reference your project in academic publications or reports. This is one way to present your metadata information:
+    -   We recommend the use of open licenses for software such as the [EULP v1.2](https://choosealicense.com/licenses/eupl-1.2/) and compatible licenses (e.g., Apache, GNU GPL or MIT) depending on the situation for reusability of the repository
+    -   Check <https://choosealicense.com/> or contact the data stewards for questions about open licenses.
+-   📝 CITATION.cff A machine-readable file providing citation metadata to allow others to properly reference your repository in academic publications or reports. This is one way to present your metadata information:
     -   You can create the CITATION file easily using [ccfinit](https://citation-file-format.github.io/cff-initializer-javascript/#/), as explained in this video from the eScience Center: [How to create a CITATION.cff using cffinit](https://www.youtube.com/watch?v=zcgLIT5Qd4M).
 
-**Code documentation (comments, docstrings, notebooks)**
+## Example scripts and tutorials
 
-Code documentation ensures that your code is understandable and reusable by others (and your future self). We recommend the following practices:
+- Examples and Tutorials:
+  - Provide example scripts, walkthroughs, or notebooks in a /docs or /examples folder.
+  - Clearly indicate where users should start.
+  - If your repository includes computational environments or dependencies, reference these in the documentation so users know how to set up and run your code (see also @sec-reproducible)
 
--   Comments:
-    -   Use inline comments to clarify complex or non-obvious code sections.
-    -   Focus on explaining why something is done a certain way, not just what is happening.
-    -   Avoid redundant comments; keep them clear and concise.
--   Docstrings:
-    -   For each function, script, or class, add a docstring or header comment explaining its purpose, parameters, return values, and exceptions.
-    -   In R: as an example use [roxygen2](https://roxygen2.r-lib.org/) for function documentation.
-    -   In Python: Follow [PEP 257 conventions](https://peps.python.org/pep-0257/) for docstrings.
--   Notebooks:
-    -   Use Jupyter Notebooks (.ipynb), R Markdown (.Rmd), or Quarto for analyses, workflows, and demonstrations.
-    -   Combine code, narrative, and output to make analyses transparent and reproducible.
-    -   Include sufficient narrative to explain the steps, data sources, and results.
--   Examples and Tutorials:
-    -   Provide example scripts, walkthroughs, or notebooks in a /docs or /examples folders.
-    -   Clearly indicate where users should start.
-    -   If your project includes computational environments or dependencies, reference these in the documentation so users know how to set up and run your code
 
-**Keeping documentation up-to-date**
-
+## Keeping documentation up-to-date
 Documentation is only useful if it reflects the current state of the project. Make updating documentation part of your development workflow:
 
--   Update documentation files (README, CONTRIBUTING, CHANGELOG, etc.) whenever code, data, or project structure changes.
--   Review documentation regularly for relevance and completeness, especially before major releases or sharing the repository publicly.
--   Encourage all contributors to help maintain and improve documentation, and treat documentation changes as part of the code review process.
--   Reference documentation status and update needs in your version control workflow (for example, linking issues or merge requests to documentation tasks).
+- Update documentation files (README, CONTRIBUTING, CHANGELOG, etc.) whenever code, data, or project structure changes.
+- Review documentation regularly for relevance and completeness, especially before major releases or sharing the repository publicly.
+- Encourage all contributors to help maintain and improve documentation, and treat documentation changes as part of the code review process.
+- Reference documentation status and update needs in your version control workflow (for example, linking issues or merge requests to documentation tasks).
 
-By maintaining clear, accurate, and up-to-date documentation throughout your project’s lifecycle, you ensure your work is compliant to open science standards, ready for effective collaboration, and future reuse.
-
-**Frameworks to assess model/script quality and transparency**
-
-In addition, there are several frameworks to assess model/script quality and transparency. Below you will find a large number of aspects that were setup by Wageningen University & Research Centre, adopted and extended by RIVM, which can be used to assess model/script quality and transparency. For each aspect, the number 1-3 represent an increase in the effort to ensure quality & transparency.
-
-**1\. The model is described**
-
-1.1 The goal and scope are documented
-
-1.  The goal and intended scope are described
-2.  The scope is justified by fitness for purpose
-3.  The limitations of the model or script are described.
-
-1.2 There is a general description of the model
-
-1.  What does the model do?
-2.  The theoretical framework is documented. Used paradigms are motivated and described in relation to the model’s purpose.
-3.  The application of the model is justified in relation to stakeholders.
-
-1.3 The conceptual and formal model are documented
-
-1.  The formal model is documented.
-2.  The conceptual model is documented, including assumptions, simplifications, and is embedded in literature.
-3.  The model’s complexity is justified and there is a peer-reviewed scientific publication.
-
-**2\. The technical implementation of the model is documented**
-
-2.1 The implementation of the model is documented
-
-1.  Reproducibility document
-2.  Basic structure and/or flow diagram
-3.  Justified (modular) design
-
-2.2 The source code or script is commented (see chapter 6 for version control)
-
-1.  Author’s name
-2.  Basic comments in the code and/or comment guidelines
-3.  Comments in the code with complete coverage and/or code reviews
-
-2.3 The development environment is documented
-
-1.  Programming language
-2.  The IDE and settings are documented
-3.  Limitations of the development environment are documented and there is a justified choice for the environment
-
-2.4 The implementation is verified
-
-1.  Verified within the core parameter domain
-2.  Behavior at the extremes of the domain
-3.  External verification
-
-2.5 The implementation is tested
-
-1.  Happy flow integration test recorded. Logbook for model development
-2.  Tests documented and/or test protocol. Untested components identified.
-3.  Code coverage of the tests is documented.
-
-**3\. The parameters, variables, input and output of the model are described**
-
-3.1 The parameters and variables of the model are documented
-
-1.  (Inline) description and units
-2.  Quantities, default values, standard source and description
-3.  Range and accuracy
-
-3.2 Calibration of parameters is described
-
-1.  Description or repeatable scripts
-2.  Procedure and results discussed
-3.  Justified choice of method and discussion of alternatives
-
-3.3 The input and output are described
-
-1.  (Inline) description and units
-2.  Structure, format, quantities, accuracy, description, linking variables and parameters and version echo
-3.  (Inter)national standards and input echo & timestamp
-
-3.4 The origin of data is described
-
-1.  Citation or unique identifier for all sources
-2.  Data preparation pipeline, data source, and scripts tested
-3.  Protocol for data collection, periodically updated, duration of validity, date of last update
-
-**4\. The functioning of the model is evaluated**
-
-4.1 A sensitivity analysis has been performed
-
-1.  Documented experience (logbook)
-2.  Tailored to model type, documented and discussed
-3.  Motivated, documented protocol and evaluated
-
-4.2 An uncertainty analysis has been performed
-
-1.  N.A. (may be skipped)
-2.  Qualitative discussion
-3.  Quantitative analysis and evaluated
-
-4.3 The model is validated
-
-1.  Documented ‘face validation’ (logbook)
-2.  Discussed validation and non-validated components identified
-3.  Motivated, documented protocol and evaluated
-
-4.4 Use of the model is tracked
-
-1.  N.A. (may be skipped)
-2.  Example studies identified
-3.  Use and user experience tracked, evaluated and documented
-
-4.5 There is a general description of model ‘fitness for purpose’
-
-1.  Main considerations are documented. With references to similar approach/principle/method
-2.  Relation of purpose to: test, sensitivity, uncertainty, validation and use
-3.  Reliability
-TBD
+By maintaining clear, accurate, and up-to-date documentation throughout
+your software/project development life cycle, you ensure your work is
+compliant with RIVM and open science standards, and ready for effective
+collaboration and future reuse.
