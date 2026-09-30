@@ -1,0 +1,146 @@
+# Conceptual Design
+
+## Developing the conceptual/data model
+
+A conceptual model is essential for understanding and communicating your
+data science workflow. There are two main types:
+
+- System Schematic: Illustrates the system under study and its main
+interactions (architecture).  
+- Data Flow Diagram: Shows the flow of data
+and the connections between the steps in your analysis or code. Each
+step is represented as a box or node, with arrows indicating the flow
+and connections between steps
+
+While both types are valuable, this cookbook focuses on the data flow
+diagram, which maps the journey from data import to reporting. This
+visual overview helps to clarify your process, supports reproducibility,
+and makes collaboration easier. A simple flowchart, for example, can
+often clarify your workflow better than a long textual description.
+
+## Mapping workflow steps
+
+A conceptual model gives an overview of the main technical steps in your data science workflow. Each step describes what happens with your data and your code, from start to finish. This helps you understand your project and makes it easier to explain to others.
+
+Typical technical steps:
+
+- 📥 Data Import
+  - Bring data into your project from files (like CSV or Excel), databases, or APIs.
+  - 💡 **Tip**: Write code to load data and keep track of where it comes from (source and date).
+
+- 🧹 Data Cleaning
+  - Fix errors, remove duplicates, handle missing or strange values, and check for outliers.
+  - 💡 **Tip**: Use clear scripts and document why you make certain cleaning choices.
+
+- 🔄 Data Transformation
+  - Change the data into a form suitable for your analysis. For example, select useful columns, create new features, use open formats, or combine datasets.
+  - 💡 **Tip**: Explain each transformation step and its purpose.
+
+- 📊 Analysis / Feature Engineering
+  - Explore the data with summary statistics and visualizations. Create new features (columns) that may help your model.
+  - 💡 **Tip**: Save your analysis and plots for future reference.
+
+- 🤖 Model Building
+  - Train a model using your data (e.g., regression, classification, clustering). Choose algorithms and set parameters.
+  - 💡 **Tip**: Record which models and settings you try, and why you choose them.
+
+- 🧪 Evaluation
+  - Test your model's performance using metrics (like accuracy, precision, recall) or plots (like confusion matrices).
+  - 💡 **Tip**: Compare results with a simple baseline or previous models to show improvements.
+
+- 📈 Visualization
+  - Create clear graphs, plots, or dashboards to present your findings or model outputs.
+  - 💡 **Tip**: Always use labels, legends, and explain what each plot shows.
+
+- 📝 Reporting / Output
+  - Summarize your results in a report, presentation, and by publishing your data or model outputs.
+  - 💡 **Tip**: Make sure your results can be traced back to the version of your code that produced it. For instance, by using [semanting versioning](https://semver.org/) or including a git hash. 
+
+Each of these steps can be a box in your conceptual model diagram, showing the flow from raw data to final results.
+## Documenting the conceptual model
+
+Good documentation makes your project reproducible and easy to understand. It helps others (and your future self) follow your workflow and know why you made certain choices.
+
+### Creating Flow Diagrams
+
+Flow diagrams are a powerful way to visualize the steps and structure of your workflow (conceptual model). They help both technical and non-technical team members quickly see how data moves through your project and how different parts of your code or analysis are connected.
+
+- **Why use flow diagrams?**  
+  They make complex workflows easy to understand, reveal gaps or redundancies, and are helpful for onboarding new team members or sharing your approach with stakeholders.
+- **How to make a flow diagram:**  
+  Use tools like [draw.io](https://app.diagrams.net/), [Mermaid](https://mermaid.live/edit) (for text-based diagrams in Markdown), or [LibreOffice](https://www.libreoffice.org/) Draw. Start by listing your main steps, then draw boxes for each step and connect them with arrows in the order data flows.
+- **Tips:**  
+  - Keep diagrams simple and focused on the main steps.
+  - A common naming convention in workflow steps are Verb-Noun for actions (Import/Analyse/Visualize) and their result (Import Datatable/Analyse Object/Visualise Output).
+  - Use clear labels and consistent shapes.
+  - Update the diagram when your workflow changes.
+
+For example, below is the flow diagram of the model of the Dutch
+nitrate map, a machine learning model to estimate the nitrate
+concentration in the upper groundwater.
+
+```{mermaid nkrt}
+
+graph TD;
+
+    subgraph import
+    DIA[(Monitoring Data)] --> SIB[import_bedrijf]--> DIB[\farm data\]
+    DIA --> SIC[import_plattematrix] --> DIB
+    DID[(Datacube)] --> SID[data_dc]--> DIE[\Attribute space\]
+    end
+    
+    subgraph ML model
+    MDA --> MSB[model_optim] --> MDB[\model_optim\]
+    TDB --> MSA[model_rf]
+    MSA --> MDC[\Model performance\]
+    MSA --> MDD[\Partial dependencie\]
+    MSA --> MDA[\model\]
+    end
+    
+
+    subgraph training data
+    DIB --> TSA[data_farmavg] --> TDA[\Farm year avg\]
+    DIB --> TSC[data_farmgeom] --> TDC[\Farm LUTs\] 
+    TDC --> TSB
+    TDA --> TSB[data_createTraining] --> TDB[\Feature space\]
+    DIE --> TSB 
+    end
+   
+    subgraph prediction data
+    DIE --> PSA[data_create500mrast] --> PDA[\500m blocks\]
+    PDA --> PSB[model_predictdata] --> PDB[\predict data\]
+    PDB --> PSC[model_predict] --> PDC[\result\]
+    MDA --> PSC[model_predict] 
+    end
+    
+    
+
+    subgraph map
+    PDC --> KSA[model_map] -->KDA[map]
+    KDA --> KSB[(Datacube)]
+    end
+
+```
+
+
+### How to document your conceptual model
+
+- Write step descriptions: For each box in your diagram, write a short, clear explanation (1-2 sentences) of what happens in that step and why it is important.
+- Link to code: In your code files or notebooks, add comments or markdown cells that refer to the steps in your conceptual model. This connects your documentation to your actual work.
+- README file: Place your diagram and explanations in a README at the top of your project folder. This helps others quickly understand your workflow.
+- Keep it simple: Use clear language and avoid technical jargon when possible, especially if your project is shared with non-experts.
+
+### Always work in progress
+
+A conceptual model is not a one-time task. As your project develops, you may add new steps, remove others, or change your approach. Keeping your conceptual model up to date is part of good data science practice.
+
+### Best practices for your conceptual model:
+
+- Update as you go: When you make changes in your code or workflow, also update your conceptual model and documentation.
+- Team review: Discuss updates with your team, so everyone stays on the same page and can give feedback.
+- Track changes: Keep old versions of your diagram or notes, so you can see how your workflow has evolved.
+- Mark uncertainties: If a step might change or is not fully decided, make a note in your documentation (for example, add a “to be decided” label or a comment).
+
+By treating your conceptual model as a living document, you make your project clearer, more flexible, and easier to share or hand over to others.
+
+
