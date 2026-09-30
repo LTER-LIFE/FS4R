@@ -1,3 +1,96 @@
 # Version Control {#sec-versioncontrol}
+**Chapter 6 FS4R: Version control**
 
-TBD
+Finally, robust version control should become a staple in every researcher’s toolkit. By tracking changes to code and documentation, version control systems like Git support collaborative work and make it easier to identify and correct errors introduced during development. This practice also complements team workflows described in Deployment, Maintenance & Collaboration.
+
+**Version Control & Initial Setup**
+
+Version control systems like [Git](https://git-scm.com/) are essential tools for researchers. They track changes to code and documentation, support collaboration, and make it easier to identify and correct errors during development.
+
+**Creating a Git repository**
+
+To get started, install Git (and optionally a graphical interface), check how in general
+
+**Configuring git**
+
+It's important to let git put your name to the changes that you make. The git config command allows you to specify a default name and email for all your projects:
+
+git config --global user.name "Your Name"
+
+git config --global user.email your.name@example.com
+
+More information on configuring git can be found in the official docs.
+
+**Working with git**
+
+When starting a new repository, first decide if it will be a personal repository or part of a project/group:
+
+Personal repositories are intended for small, individual projects or for testing code. These should **not** be used for collaborative or production work.
+
+Project repositories should be created within a group. Groups help organize project-related repositories and make it easier to manage access.
+
+We recommend using a group name that clearly identifies the project.
+
+Add at least two project members as admins to ensure continuity. If an admin leaves LTER-LIFE, they should transfer admin rights to another member.
+
+**Collaboration platforms:**
+
+**Repository visibility:**
+
+Whenever possible, choose Internal or Public visibility for your repository.
+
+“Internal” or “Public”
+
+Only set a repository to Private if there are specific reasons, such as privacy, confidentiality, or sensitive information. With “Private,” only group members have access. Making your code visible encourages reuse, transparency, and helps others learn from your work.
+
+By following these guidelines, you ensure your code is well-organized, accessible, and maintainable, supporting both collaboration and knowledge sharing within LTER-LIFE.
+
+**Git documentation**
+
+Complete usage documentation is beyond the scope of this document, good places to start from are:
+
+[Creating a new git repository or cloning an existing one](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
+
+[Recording changes in a repository](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)
+
+[Pushing changes to a remote repository](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
+
+In general, the pro git book (first 3 links) is an excellently written resource for learning to use git. Also this [cheat sheet](https://git-scm.com/cheat-sheet.pdf) gives a clear overview of what the various git commands do conceptually.
+
+Finally, the manual pages that come with the git software are very helpful for understanding the exact behaviour of a subcommand, you can open these with git help <subcommand>.
+
+**Essential files in a git repository**
+
+We recommend every repository to contain the following key files:
+
+**README**: Describes the purpose, contents, and usage of the repository.
+
+**LICENSE**: Specifies how others may (re)use your code; RIVM recommends [open licenses](https://rivmnl.sharepoint.com/sites/Onderzoeks-enDataloketRIVM/SitePages/Open-Licenties.aspx) such as EUPL v1.2, Apache, GNU GPL, or MIT.
+
+**CITATION**: Provides citation information for your code, including persistent identifiers and author details.
+
+**.gitignore**: Lists files and folders that should not be tracked by Git (e.g., temporary files, logs, sensitive data).
+
+**CONTRIBUTING**: Explains how others can contribute to the project.
+
+**CODE OF CONDUCT**: Outlines expected behaviour for contributors.
+
+**CHANGELOG**: Documents significant changes and releases.
+
+Some of this files are required when publishing your code repository publicly. Before making a repository public, ensure it meets minimum standards for reuse and does not include any private or sensitive data (such as personal information, credentials, or large binary files). Always review your git log to ensure that commit messages do not include confidential or private information.
+
+**Collaboration and branching strategies**
+
+For personal projects or small teams, working directly on the main branch is sufficient. For larger teams, use feature branches or contributor branches to isolate work and minimize conflicts.
+
+Adopt a clear branching strategy, e.g.
+
+One branch per feature or contributor; a develop branch for staging changes before merging to main.
+
+Use clear, concise commit messages and regularly synchronize with the remote repository (git pull and git push).
+
+**Basic template for scientific repositories**
+
+We provide a [template](https://gitlab.rivm.nl/datastewards/template-scientific-repo) that serves as a structured framework for organizing and managing scientific modelling projects, particularly those intended for production, collaboration, or publication. It provides a best-practice folder structure and guidelines to ensure clarity, reproducibility, and ease of maintenance.
+
+This repository represents a general-purpose template base for scientific or data science models. You can adapt the folder structure depending on the specific needs of your project.
