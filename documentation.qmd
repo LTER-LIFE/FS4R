@@ -76,7 +76,7 @@ x <- c(1:5)
 
 In the above example, x could be better named as record_id.
 
-With a comment you can record your thoughts. @boswell_Foucher
+With a comment you can record your thoughts. @boswell_art_2012
 suggest to see comments as "director commentary" in a movie. The director
 can explain why a scene is shot in a certain way, or why a certain actor
 was chosen. In the same way, you can explain your code with comments.

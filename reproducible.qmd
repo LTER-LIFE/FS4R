@@ -1,5 +1,5 @@
 
-# Reproducible Research
+# Reproducible Research {#sec-reproducible}
 
 Reproducible research is the practice of organizing and documenting data,
 code, and methods so that others can independently recreate the same
@@ -25,7 +25,7 @@ are transformative in their effect.
 A cornerstone of reproducible research is automation: using scripts
 and workflow management tools to carry out analyses reduces manual
 errors and makes the research process transparent. As described in
-[Chapter @sec-goodcodingpractices] and [Chapter @sec-testingvalidation],
+[Chapter @sec-goodcoding] and [Chapter @sec-testingvalidation],
 automating analysis not only streamlines work, but also enables reliable
 testing and validation of results.
 

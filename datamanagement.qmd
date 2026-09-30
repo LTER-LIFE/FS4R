@@ -33,7 +33,7 @@ such as:
 This example is widely recognized and provides an intuitive overview
 of the main project components. However, it's important to consider
 how data management interacts with version control. If your project
-is tracked using Git, as recommended in @sec-versioncontrolj
+is tracked using Git, as recommended in @sec-versioncontrol
 you should avoid adding large datasets, especially raw data,
 directly to your repository. Instead, store data in a dedicated database,
 data management system (DMS), or a secure network location (e.g., R:

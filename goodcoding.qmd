@@ -11,7 +11,7 @@ This chapter is not a simple 'x steps to success' guide. It is a collection of g
 What is good code? Good code is code that is easy to read and
 understand. A useful metric to evaluate code is the 'time till
 understanding': how long does it take for your colleague to read
-through your code and understand what it does  @boswell_Foucher
+through your code and understand what it does  @boswell_art_2012
 To understand code means:
 
 - You can make changes.
