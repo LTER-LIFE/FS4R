@@ -1,117 +1,401 @@
+# Implementation & Coding Standards {#sec-goodcoding}
 
-# Good Coding Practices {#sec-goodcodingpractices}
+Good code is important; it is like good writing. If you read a story that is written incoherently, it takes much longer to read and understand, if you can understand it at all. The problem with bad code is that it can actually work and produce the correct result. If the result is all that counts, you might get lured into the swamp of bad code. If you, your colleague, or your future self has to make changes to the code, that swamp can turn out to be a nightmare. The code is hard to understand, hard to maintain, and hard to extend or reuse. This leads to frustration, errors, and wasted time.
 
-Good code is important, it is like good writing. If you are reading a
-story wich is written incoherently, it takes you much longer to read
-and to understand, if you can understand it anyway. The problem with
-bad code is that it can actually works and produce the right result.
-And if the result counts, you might get lured into the swamp of bad
-code. If you, your collegue, or your future self has to make changes
-to the code, that swamp can turn out to be a nightmare. The code is
-hard to understand, hard to maintain, and hard to extent or reuse.
-This leads to frustration, errors, and wasted time. 
+It takes time to learn how to write good, concise, and easy-to-understand code. If you really master it, it can even become an art. The best way to learn is by doing it, learning from others, and getting regular feedback on your code.
 
-It takes time to learn how to write a good, concise, and easy to
-understand story. If you really master it it can even become an art.
-The same holds for coding. So it also takes time and effort to learn how to
-write good code. And the best way to learn is by doing it, learn from
-others, and get regular feedback on your code.
+This chapter is not a simple 'x steps to success' guide. It is a collection of good practices and guidelines which you can implement in your own work. Do not try to implement all at once; pick one or two practices at a time and see how they work for you. Over time, your coding skills will improve. But before we start, we need to know what we aim for: what is good code?
 
-This chapter is not a simple 'x steps to success' guide. It is a
-collection of good practices and guidelines which you can implement in
-your own work. Do not try to implement all at once, but pick one or
-two practices at a time and try how they work for you. Then, over time,
-your coding skills will improve. But before we start, we need to know
-what we aim for: what is good code?
+## Writing clean, efficient, maintainable code
 
-## The defintion of good code
+What is good code? Good code is code that is easy to read and
+understand. A useful metric to evaluate code is the 'time till
+understanding': how long does it take for your colleague to read
+through your code and understand what it does  @boswell_Foucher
+To understand code means:
 
-What is good code? That is code which is easy to read and understand.
-A good metric to evaluate the code is the 'time till understanding':
-How long does it take for your collegue to read through your code and
-uderstand what is does @boswell_Foucher. And to understand
-code it means:
+- You can make changes.
+- You can spot errors or inconsistencies.
+- You can extend or reuse the code for new use cases.
+- You understand how this code interacts with other code.
 
- * that you can make changes
- * that you can spot errors or inconsistencies  
- * that you can extend the code, or reuse the code, to new use cases,
- * and that you understand how this code interacts with other code  
-
-Writing better code means that you are minimizing the metric 'time till
-understanding'.  When it is good enough is a matter of definition. In
-theory this means that the metric is equal to time needed for a single,
-top to bottom, read through of the code. In practice this is not always
-possible, because some code is inherently complex. Actually measuring
-the time till understanding is also not recommended, because it will
-very a lot between different people with differen expertise levels. It
-is, however, a good goal to keep in mind. Both when writing code but
-also when reviewing code. 
-
-## Good coding practices
+Writing better code means minimizing the 'time till understanding.' When
+it is good enough is a matter of definition. In theory, it means that
+the metric is equal to the time needed for a single, top-to-bottom
+read-through of the code. In practice, this is not always possible,
+because some code is inherently complex. Actually measuring the time
+till understanding is also not recommended, because it will vary a lot
+between different people with different expertise levels. It is, however,
+a good goal to keep in mind, both when writing and reviewing code.
 
 
-### Keep it small
+## Applying style guides and conventions
 
-A book is not written as a single huge chapter, but is broken down in
-smaller chapters and sections. The same holds for code. If you break
-down your code in smaller chunks, scripts of files, it becomes much
-easier to read and understand. Especially if these chunks of code can
-allso be related to the conceptual model of your workflow (see chapter
-about conceptual models). If the reader known the context of the chunk
-of code it is much easier to understand what it does.
+The easiest part of writing good code is applying a style guide to
+your code. A style guide is a set of rules about how to format your
+code. It includes things like indentation, spacing, line breaks, naming
+conventions, and other aspects that contribute to the overall readability
+of the code.
 
-The same goes for sentences in writing. Long sentences are hard to
-understand. Short sentences are easier to read. So do't try to be
-superefficient and put as much operations in one single line but try
-to split it up
+Examples of widely used style guides include the [tidyverse
+style guide](https://style.tidyverse.org/) for R and [PEP
+8](https://peps.python.org/pep-0008/) for Python. These guides are often
+extended with local style guides, which may include conventions on file
+naming, folder structure, and other institute-specific rules.
 
-EXAMPLE code
+For most generic style guides, linters are available. Linters are tools
+that can be integrated into your code editor or IDE and automatically
+check your code against the style guide, like an automated spelling
+check for code. Most linters can also autoformat your code, so you do
+not have to worry about the details yourself.
 
-EXAMPLE R code, pipe operators
+Examples of linters and formatters:
+
+- R: `lintr`, `styler`
+- Python: `pylint`, `black`, `flake8`
+
+Editor integration:
+
+- R: RStudio supports `lintr` and `styler` via the addins menu and project options.
+- Python: Editors like VSCode, PyCharm, and JupyterLab support `pylint`, `black`, and `flake8` via extensions or built-in tools.
+
+Example: Before and after formatting
+
+Unformatted Python:
+
+```python
+def calc(x,y):return x+y
+```
+
+Formatted Python (PEP 8):
+
+```python
+def calc(x, y):
+    return x + y
+```
+
+Unformatted R:
+
+```r
+calc<-function(x,y){x+y}
+```
+
+Formatted R (tidyverse style):
+
+```r
+calc <- function(x, y) {
+  x + y
+}
+```
+
+Working with a style guide and a linter can be hard in the beginning,
+especially if you have been programming for some time using your own
+code style. You have to 'unlearn' your old habits and get used to the
+new style. While this can be frustrating at first, it will pay off
+later because you will be producing more consistent code. If you and
+your colleagues use the same style, it also means that it is easier to
+read each other's code, reducing the 'time till understanding.'
+
+### Good coding practices
+
+#### Keep it small ✂️
+
+A book is not written as a single huge chapter but is broken down into
+smaller chapters and sections. The same holds for code. If you break down
+your code into smaller chunks, scripts, or files, it becomes much easier
+to read and understand. Especially if these chunks of code can also be
+related to the conceptual model of your workflow (REF chap conceptual
+model) If the reader knows the context of the chunk of code, it is much
+easier to understand what it does.
+
+Break your code into small, focused units.
+
+- In R, use functions for repeatable tasks, and scripts for logical parts of your workflow.
+- In Python, split your code into modules and functions, and use classes only if necessary.
+
+Example: Python
+
+```python
+# Too much in one function (bad)
+def analyze_data(df):
+    # data cleaning
+    df = df.dropna()
+    # feature engineering
+    df['ratio'] = df['x'] / df['y']
+    # modeling
+    model = LinearRegression().fit(df[['ratio']], df['outcome'])
+    return model
+```
+
+```python
+# Split into small functions (good)
+def clean_data(df):
+    return df.dropna()
+
+def feature_engineering(df):
+    df['ratio'] = df['x'] / df['y']
+    return df
+
+def build_model(df):
+    return LinearRegression().fit(df[['ratio']], df['outcome'])
+```
+
+Example: R
+
+```r
+# Bad: all in one go
+df <- read.csv("data.csv")
+df <- df[!is.na(df$x) & !is.na(df$y), ]
+df$ratio <- df$x / df$y
+model <- lm(outcome ~ ratio, data = df)
+```
+
+```r
+# Good: modularized
+df <- read.csv("data.csv")
+clean_data <- function(df) {
+  df[!is.na(df$x) & !is.na(df$y), ]
+}
+feature_engineering <- function(df) {
+  df$ratio <- df$x / df$y
+  df
+}
+```
 
 
-### formating and style guidens
+By breaking up your code into smaller pieces, it is also easier to
+test and debug. If a bug occurs, you can isolate it to a specific
+function or module, making it easier to fix. Also, it makes it easier
+to reuse code in other projects or workflows. If you have a function
+that does one thing well, you can use it in multiple places without
+having to rewrite it.
 
-The easiest part in writing good code is apllying a style guide to
-your code. A style guide is a set of rules how to format your
-code. It includes things like indentation, spacing, line breaks,
-naming conventions, and other aspects that contribute to the overall
-readability of the code.
+#### Keep it simple 🧩
 
-Examples of generic style guides are 'tidystyle' [ref] for R and 'PEP 8' [ref]
-for Python. These guides are often extended with local style guides
-wich contains conventions like file naming, folder structures, and
-other intitute spefific rules.
+Often, you write a piece of code once, but it is read many times.
+Therefore, it is important to keep your code simple and easy to read.
+Simple code is easier to understand and easier to review by a
+colleague. Also, it helps with maintaining and extending your code in
+the future. If you have to make changes to your code, it is easier to
+do if the code is easy to read. This reduces the chances of
+introducing bugs.
 
-For most generic style guides, linters are avialable. These are tools
-which can be integrated in your code editor of EDI and check
-automagically your code against the style guide. It is like an
-autmoated spelling check in a text editor. Most linters can also
-autoformat your code, so you do not have to worry about the details
-of the style guide yourself. 
+Your code probably lives in a project that will change. New
+requirements will come in, new data is addded, and new functions are
+needed. This means that your code often have to change. Very abstract
+constructs or clever tricks may be hard to understand. Creating a cool
+one-liner may be fun, but it is not always the best solution and a
+drag on the readability of your code.
 
-TODO: give examples/refs
-Example of linters:
+As an example, look at the following code snippet in which we
+calculate the mean of two groups in a dataframe.
 
- - R: lintr, styler
- - Python: pylint, black, flake8
+```r
+# Create data.frame:
+#  - X: random groups 1 or 2
+#  - Y: random values between 1 and 10
+df <- data.frame(
+  X = sample(1:2, 20, replace = TRUE),
+  Y = runif(20, min = 1, max = 10)
+)
 
-Exampe of editor settings:
+# Calculate the everage of each group using a clever one-liner (bad)
+aggregate(Y ~ X, data = df, FUN = mean)
 
- - R: Rstudio settings for lintr and styler
- - Python: VSCode settings for pylint and black   
+# Calculate the average of each group using a clear and simple approach (good)
+df |>
+  group_by(X) |>
+  summarise(mean_Y = mean(Y))
 
-Example, formatted / unformatted code
+```
 
-Working with a style guide and a linter can be hard in the beginning.
-Especially if you are allready programming for some time using your
-own code style. You have to 'unlearn' your old habbits and get used to
-the new style. While this can be frustrating in the beginning, it will
-pay off later because you will be producing more consistent code. If
-you and your colleagues use the same style, it also means that it is
-easier to read eachother code. Reducing the 'time till understanding'
+While both approaches give the same result, the second approach is
+much easier to read and understand. It is clear what the code does,
+and it is easy to modify if needed. 
 
-### Naming functions and variables
+Another example of unnecessary code complexity is the use of nested
+structures. These structures often appear in the form of nested loops
+or nested function calls, or nested if statement. Please look at the
+following example.
+
+```r
+result <- summarise(
+  group_by(
+    filter(
+      mutate(
+        iris,
+        SepalRatio = Sepal.Length / Sepal.Width
+      ),
+      Species != "setosa"
+    ),
+    Species
+  ),
+  AvgRatio = mean(SepalRatio)
+) |> 
+  mutate(
+    RatioCategory = ifelse(AvgRatio > 2, "High", "Low")
+  )
+
+```
+
+In this code a lot things happen. However, it is hard to read and
+understand what is going on. It is better to break it up into smaller
+pieces and use intermediate variables. This makes it easier to read
+and understand what is going on. The following code snippet shows a
+better approach.
+
+```r
+iris_with_ratio <- iris |>
+  mutate(
+    SepalRatio = Sepal.Length / Sepal.Width
+  )
+
+iris_filtered <- iris_with_ratio |>
+  filter(
+    Species != "setosa"
+  )
+
+ratio_summary <- iris_filtered |>
+  group_by(Species) |>
+  summarise(
+    AvgRatio = mean(SepalRatio),
+    .groups = "drop"
+  )
+
+result <- ratio_summary |>
+  mutate(
+    RatioCategory = ifelse(AvgRatio > 2, "High", "Low")
+  )
+
+```
+
+The above code is much easier to read and understand. It is clear what
+is going on, and it is easy to modify if needed. It is also easier to
+debug if something goes wrong. If you have a bug, you can isolate it
+to a specific step, making it easier to fix.
+
+#### Don’t repeat yourself (DRY) 🔁
+
+The principle of DRY, don't repeat yourself, is a fundamental principle
+in software development. It is about reducing repetition or duplication
+of code and your logic. When you repeat the same code many times, it
+becomes harder to maintain. If you need to change a rule or a formula,
+you must find and update every copy. This is error‑prone and makes your
+script fragile. DRY helps you keep your code consistent, easier to read,
+and simpler to modify.
+
+For example, if you want to create multiple models with different
+variables:
+
+```r
+data("iris")
+model_petal_width <- lm(Petal.Length ~ Petal.Width, data = iris)
+model_sepal_length <- lm(Petal.Length ~ Sepal.Length, data = iris)
+model_sepal_width <- lm(Petal.Length ~ Sepal.Width, data = iris)
+```
+
+If you want to change the formula, you must change it in three places.
+If you forget to change it in one place, you will have inconsistent
+models. In this case, it is better to create a function that takes the
+variable as an argument and returns the model. This way, you only have
+to change the formula in one place.
+
+```r
+create_model <- function(variable) {
+  lm(Petal.Length ~ get(variable), data = iris)
+}
+
+model_petal_width <- create_model("Petal.Width")
+model_sepal_length <- create_model("Sepal.Length")
+model_sepal_width <- create_model("Sepal.Width")
+```
+
+Or, even better, you can use a for loop to create the models:
+
+```r
+variables <- c("Petal.Width", "Sepal.Length", "Sepal.Width")
+for (var in variables) {
+    create_model(var)
+}
+
+```
+
+Another option, which is more functional, is to use `lapply` to create
+the models. Look at the next code example. 
+
+```r
+variables <- c("Petal.Width", "Sepal.Length", "Sepal.Width")
+models <- lapply(variables, function(var) {
+  lm(Petal.Length ~ get(var), data = iris)
+})
+names(models) <- variables
+```
+
+Now go read the previous
+paragraph about keeping things simple. While the `lapply` approach is
+more functional, it is also harder to read for less experienced R
+users. The for loop is more explicit and easier to understand,
+although much slower than `lapply`. Keeping things simple and DRY can
+be conflicting principles, the right solution is often a matter of
+taste and experience. 
+
+#### Single responsibility 🧑‍🔬
+
+The single responsibility principle says that each function, module or
+script should do one clearly defined thing, and do it well. While coding,
+this means that when you read a function, you can explain its job in
+one short sentence without using the words “and”.
+
+For example, a good function might “compute summary statistics for
+numeric columns”. A function that “reads a file _and_ cleans the data
+_and_ fits a model _and_ saves a plot” is doing too many things at once.
+
+While single responsibility is a good principle, it is not always easy
+to apply. It requires you to think about the purpose of your code and
+how to break it down into smaller pieces. For a function it is often
+easy to apply single responsibility, but for a module or script it can
+be more challenging. You have to think about the overall workflow and
+how to break it down into smaller steps. Your conceptual model from
+the [Conceptual Design](conceptual-design.html#conceptual-design)
+chapter can help you with this.
+
+There is no general rule for how small a function should be. It
+depends on the context and the complexity of the task. When writing a
+function, you can ask yourself the following questions:
+
+Does it makes code easier to read? When a function has one clear task,
+you can understand it faster. You do not need to keep track of many
+different steps and side effects in your head. If you open a script and
+see small functions with clear names, it is easier to follow the flow
+of data.
+
+Does it makes code easier to test? If a function does one thing, you
+can write tests that check that one behaviour. When something breaks,
+you know which part to test and fix. If a function does many 
+tasks, it becomes hard to write good tests and hard to know which part
+is failing.
+
+Does it makes code easier to reuse? A small function with a single
+responsibility is simpler to use in a different project. You can take
+that function and call it with new data. When functions combine many
+steps, they are less flexible and harder to reuse.
+
+Does it helps with debugging and maintenance? If a bug appears,
+it is easier to locate it when each function handles one step. You can
+add logging or print statements to a specific function and see where
+things go wrong. In a big function with many responsibilities, the bug
+can hide anywhere.
+
+Does it supports change over time?. Requirements change. If each
+responsibility is isolated in its own function or module, you can change
+one part without touching the rest. This reduces the risk of breaking
+other parts of the system.
+
+If you can answer yes to most of these questions, you might consider
+[refactoring](implementation-coding-standards.html#refactoring) your
+code to follow the single responsibility principle more closely.
+
+#### Naming functions and variables 🏷️
 
 It is important to use meaningful names for variables and functions
 because it makes your code easier to read and understand, both for
@@ -120,40 +404,338 @@ names describe what a variable represents or what a function does, which
 helps prevent confusion and reduces the chances of making mistakes. Good
 naming also makes it easier to maintain and update your code over time.
 
-TODO: Something about scope (see quote)
+For example, consider the following code snippet:
 
-TODO: See 'art of readable code, chap 2'
+```r
+# Bad naming
+x <- 10
+y <- rnorm(x)
+my <- function(y) {
+  mean(y)
+}
 
-### Keep it simple
+# Good naming
+num_samples <- 10
+random_values <- rnorm(num_samples)
+calculate_mean <- function(values) {
+  mean(values)
+}
+```
 
-Simple and straightforwarder code
+Also consider the 'scope' of the variable and where it is used in the
+code. If the definition of the variable is 'close' to where it is
+used, it is easier to understand what it represents. If the variable
+is defined far away from where it is used, it can be harder to
+understand its purpose. For example, when using a for loop, it is
+often not necessary to provide a meaningful name for the loop
+variable, because it is only used within the loop.
 
-DOnt; make the reader think too musch
+```r
+for i in 1:10 {
+  print(i)
+}
+
+```
+
+In the above example it is clear that `i` is the loop variable and it
+is only used within the loop. But if the loop is spread over many
+lines of code, it can be helpful to give the loop variable a more 
+meaningful name, like `sample_index` or `iteration_count`. This make
+is easier to recognize the purpose of the variable and its role in the
+loop.
+
+How you write a variable name is also important. It is a good practice
+to use a consistent naming convention throughout your codebase. This
+makes it easier to read and understand your code, and it helps prevent
+confusion. Some common naming conventions include:
+
+ - snake_case: Words are all lowercase and separated by underscores (e.g., `my_variable`).
+ - lowerCamelCase: The first word is lowercase, and subsequent words are capitalized (e.g., `myVariable`).  
+ - UpperCamelCase: Each word is capitalized (e.g., `MyVariable`).  
+
+Other conventions exists, but are not commonly used in R or Python,
+for example:
+
+ - kebab-case: Words are all lowercase and separated by hyphens (e.g.,
+   `my-variable`). For R and Python, this is not a common convention,
+   because hyphens are not allowed in variable names (it would be
+   interpreted as a minus sign).
+ - Hungarian notation: Prefixes indicate the type of variable (e.g.,
+   `strName` for a string, `intCount` for an integer). This is also not
+   commonly used in R or Python.
+
+The best naming convention is the one that is most commonly used,
+preferable one that is based on a common style guide:
+
+  - [PEP 8 – Python Style Guide](https://peps.python.org/pep-0008/)
+  - [tidyverse Style Guide for R](https://style.tidyverse.org/)
+
+#### Error handling 🚨
+
+If you write code, you'll will encounter errors. Some errors are
+expected, and some are unexpected. It is frustrating to get an error
+message that is not helpful, or even worse, to get no error message at
+all but just erroneous results. Robust code anticipates and handles
+potential problems gracefully. Always check inputs, provide meaningful
+error messages, and use built-in mechanisms to catch and handle
+errors.
+
+For example in R if you expect a numeric argument for a function,
+the user may provide a character string instead. If you do not check
+the input, the function may fail with an error message that is not
+helpful. And often the user has no what went wrong or where to find
+the problem. If you check the input of the function, you can provide a
+meaningful error message that helps the user understand what went
+wrong and how to fix it. For example:
+
+```r
+random_vals <- rnorm(100)
+
+calc_max <- function(x) {
+  if (!is.numeric(x)) {
+    stop("calc_max: Input must be numeric")
+  }
+  max(x)
+}
+
+```
+
+If something unexpected happens, it is often better to let the error
+propagate and crash the program, rather than silently failing or
+returning incorrect results. This way, the user is immediately aware
+that something went wrong and can take action to fix it. Also, the
+user can catch these errors and handle them gracefully, rather than
+having to deal with incorrect results later on. See the two code examples below for python and R.
+
+```python
+def safe_divide(a, b):
+    """
+    Divides a by b, raising a ValueError if b is zero.
+
+    Parameters:
+        a (float): Numerator
+        b (float): Denominator
+
+    Returns:
+        float: Result of division
+
+    Raises:
+        ValueError: If b is zero.
+    """
+    if b == 0:
+        raise ValueError("b cannot be zero")
+    return a / b
+
+# Using try/except to handle the error
+try:
+    result = safe_divide(10, 0)
+except ValueError as e:
+    print(f"Error: {e}")
+```
 
 
-### Don't repeat yourself (DRY)
+```r
+#' Safely divide two numbers
+#'
+#' Divides a by b and throws an error if b is zero.
+#'
+#' @param a Numerator.
+#' @param b Denominator.
+#' @return Result of division.
+#' @examples
+#' safe_divide(10, 2)
+#' tryCatch(safe_divide(10, 0), error = function(e) print(e$message))
+safe_divide <- function(a, b) {
+  if (b == 0) stop("b cannot be zero")
+  a / b
+}
 
-write functions
-document function (use genAI)
-
-### Single responsibility
-
-Each function should do one thing and do it well
-
-### Comments
-
-See chapter about documentation
-
-### Error handling
-
-Check inputs and throw error when needed
-catch errors, not unexpected results
-
-### refactoring
-
-not without a test
+# Using tryCatch to handle the error, printing a message instead of crashing the program
+tryCatch(
+  safe_divide(10, 0),
+  error = function(e) message("Error: ", e$message)
+)
+```
 
 
-### Reviewing
+Don't forget to document your error handling in your function's
+docstring or comments, so users know what to expect and how to handle
+errors.
 
-how to review (should this be a separate chapter?)
+## Refactoring 🔄
+
+Refactoring your code means improving the internal structure of your
+code without changing its output or behaviour. It is a key software
+engineering practice for keeping your code readable, maintainable, and
+efficient. You refactor your code, for example, when the person
+reviewing your code suggests improvements, or when you notice that
+your code is getting messy and hard to read. Refactoring can involve
+renaming variables, breaking down large functions into smaller ones,
+removing duplicate code, or reorganizing the code structure. The goal
+is to make your code cleaner and easier to understand, while
+preserving its functionality.
+
+Refactoring should always be supported by tests to
+ensure you do not introduce errors. If you have an test that checks
+the current behaviour of your code, you can run it after refactoring
+to make sure everything still works as expected. If the tests pass,
+you can be confident that your refactoring did not break anything.
+
+Also, when refactoring, one must also thing about the documentation.
+If you change the structure of your code, you may also need to update
+the documentation to reflect the new structure. This includes updating
+docstrings, comments, and any external documentation that references
+the code.
+
+- Do not refactor without tests: Before refactoring, write unit tests (REF chapter testing & validation) that cover current code behaviour.
+  - Python: Use [pytest](https://docs.pytest.org/en/stable/) or [unittest](https://docs.python.org/3/library/unittest.html).
+  - R: Use [testthat](https://testthat.r-lib.org/).
+- Refactor in small steps: Make one logical change at a time and run your tests frequently.
+- Keep commits focused for `git`: Each commit should address a single change, making it easier to track and revert if needed.
+- Document refactoring: Note significant refactoring in your CHANGELOG and, if needed, in code comments.
+
+## Reviewing 👀👀
+
+No code should be used without being reviewed by a colleague. Code
+review is an essential part of the software development process,
+ensuring that code meets quality standards, is maintainable, and is
+free of errors. It also promotes knowledge sharing among team members.
+
+While code review can be done in many ways, the most common approach
+is to use version control systems like Git, along with platforms like
+GitHub or GitLab, which provide tools for pull requests (PRs) or merge
+requests (MRs). These platforms allow developers to submit their code
+changes for review, where colleagues can comment, suggest
+improvements, and approve the changes before they are merged into the
+main codebase.
+
+When reviewing code, reviewers can focus on many aspects. For example:
+ - Is the code clear and easy to understand?
+ - Does it follow the team's coding standards and style guides?
+ - Is the code well-documented, with comments and docstrings where necessary?  
+ - Are variable and function names meaningful?
+ - Does the code produce the expected results and handle edge cases?
+ - Are there any potential bugs or performance issues?  
+
+When asked for a review, it is good to know what kind of feedback the
+author wants. If it is a first prototype, the autthor may want feedback
+on the overall approach, readability, and design choices. Correct
+functionality may not be the main concern at this stage. When the code
+is published, one may want feedback on the documentation, especially
+by someone outside the project.
+
+Whatever the stage of the code, or the requested feedback. There is
+always one aspect that should be taken into account: The code must be
+clear and easy to understand. This is the most important aspect of
+code review. If the code is not clear, it is hard to review and hard
+to maintain. The code should be clear enough that a colleague can
+understand it without having to ask the author for explanations.
+
+While code review is dependent on the context of the project and the
+team, there are some general guidelines that can help make the process
+more effective:
+
+ - _Step 1_: Focus on the 'time to understand' of the code. If it
+   takes too long to understand or if you need to ask the author for
+   explanations, the code is not clear enough. Discuss with the author
+   how to make it clearer. This may involve refactoring, adding
+   comments, or improving naming conventions.
+ - _Step 2_: This is related to step 1. If you can understand the code,
+   is it also readable? This sounds a bit strange, but an experienced
+   programmer can read code that is not clear, but it is not easy to
+   read. Readable code means that you can read it without having to
+   think too much about it, that names of variables and functions are
+   meaningful, and that the code is structured in a way that makes
+   sense. Also the comments in the code should be clear and helpful.
+   If you have to read a comment twice, it is not good. Also check for
+   the coding style. If the code is not consistent with the style
+   guide of the team, it should be reformatted.
+ - _Step 3_: Check for correctness. Does the code do what it is supposed
+   to do? Are there any bugs or errors? What happens if the code is
+   used in a different context? Or with different data? (or even
+   erroneous data?). Report any issues to the author and suggest
+   improvements.
+
+Additional steps can be added to the review process, depending on the
+context of the project. For example, the review can focus on
+performance, security, or scalability. Also, specific reviews can be
+requested for certain parts of the code, such as tests. Or a broader
+review can be requested where an experienced colleague looks at the
+correct implementation of an algorithm or mathematical model, and discuss this
+with someone who is experienced with the code.
+
+### Giving feedback
+
+When giving feedback, it is important to be constructive and
+respectful. Your review is a way to help your colleague improve their code
+and coding skills, not to criticize or judge them personally. Focus on
+the code, not the person. Use specific examples and provide suggestions
+for improvement. Avoid vague comments like "this is bad" or "this is
+confusing." Instead, explain why something is problematic and how it
+can be improved. If you have no clue how something can be improved, or
+you can not pinpoint a certain bug, just be honest and say that you do
+not know. When discussing these points with the author, you may come
+up with a solution together.
+
+Especially when you are very experienced with coding, it is easy to
+forget that not everyone has the same level of experience. You may
+have a lot of knowledge about a specific topic, but your colleague may
+not. When giving feedback, it is important to consider the experience
+level of the author and adjust your feedback accordingly. If you are
+unsure, then note your feedback for yourself and offer to discuss this
+face to face with the author. This way, you can provide feedback which
+is more targeted at the experience level of the author. 
+
+Be careful with 'normative' feedback. Code is like writing and
+talking. Everybody has their own style and way of doing things. Even
+if you apply a style guide, there are often many ways to implement a
+solution. There is no single correct way to write code. If you have a personal opinion
+about a specific coding style, it is important to be aware of this and
+not impose your opinion on others. Instead, use your feedback as a
+learning opportunity and discuss the pros and cons of different
+approaches.
+
+### Using code review tools
+
+Code review means having a colleague look at your code before it is merged, to catch mistakes, improve code quality, and share knowledge. Most teams use pull/merge requests in GitHub or GitLab for review.
+
+- Peer review: Submit a Pull Request (GitHub) or Merge Request (GitLab) with your changes. Assign a colleague as a reviewer.
+- Request Guides:
+  - [GitHub (Pull request)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
+  - [GitLab (Merge Requests)](https://docs.gitlab.com/user/project/merge_requests/)
+- Automate checks: Use CI/CD pipelines to run automated style checks and tests.
+- Use a checklist: Review for clarity, correctness, code style, documentation, and test coverage.
+
+Example: Review Workflow in GitLab/GitHub
+
+- Push your feature branch.
+- Open a Merge Request (MR) or Pull Request (PR).
+- Assign reviewers.
+- Reviewers comment, request changes, or approve the MR/PR.
+- Automated tests run via CI/CD (GitLab Runners/GitHub Actions).
+- Merge once approved and tests pass.
+
+See also the the [Turing Way guide in Code
+Review](https://book.the-turing-way.org/reproducible-research/reviewing/).
+
+## Structuring codebase (modules, scripts, notebooks)
+
+Organize your project into logical modules, scripts, and notebooks. Make sure the structure matches your workflow and conceptual model. This makes it easier to reuse and maintain code.
+
+- R: Use R projects or R packages for larger analyses.
+- Python: Use packages (folders with `__init__.py`) or modules for reusable code.
+
+A clear structure helps:
+
+- Keep raw and processed data separate from code.
+- Reuse scripts and functions in multiple analyses.
+- Collaborate with others by making navigation intuitive.
+
+In many projects it is helpful to have one “master script” (or
+“do‑it‑all” script) that runs the full analysis pipeline by
+calling smaller, focused scripts or functions (e.g. `01_load_data.R`,
+`02_clean_data.R`, `03_analyse.R`, `04_plot_results.R`). This makes
+it clear how to reproduce the complete workflow and where to look for
+each step.
+
+(REF add refs to other chapters)
